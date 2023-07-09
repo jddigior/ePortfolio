@@ -471,16 +471,24 @@
 
 				     	<div class="media">
 							<div class="fluid-video-wrapper">
-								<iframe src="https://player.vimeo.com/video/843689832?h=63ac81bac1;color=F64B39" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+								<iframe src="https://player.vimeo.com/video/843717067?h=3e0f911d2c" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
 						  </div>
 				     	</div>      	
 
 					   <div class="description-box">
 					      <h4>Autonomous Chess Robot</h4>		      
 					      <p>
-							Our ME101 final project group loves chess and found that online play simply does not feel as good as physical play.
-							We designed and built this robot to allow people to play physical chess against AI. 
-							The mechanical portion was built upon the principles of a Gantry system, using wheels, belts, racks and pinions.
+							&emsp;Our ME101 final project group found that online chess simply does not feel as good to play as physical chees.
+							So, we built an automated physical chess robot.
+							<br>&emsp;The mechanical portion was built upon the principles of a gantry system, using wheels, belts, racks and pinions,
+							with all parts being custom modelled and 3D printed/laser cut or taken from a Tetrix/Lego EV3 kit.
+							Uses a claw mechanism with custom gripper attachments to pick and move pieces
+							<br>&emsp;The software was split into move calculation/detection and robot movement. 
+							The move calculation and detection is run on a laptop. 
+							This code is written in Python, using the Stockfish library 
+							for move calculation and OpenCV for computer vision and move detection.
+							The robot itself runs on RobotC, taking a set of instructions from the laptop and parsing them into the correct chess movement.
+							Also, including some other features like a resign button and screen displayed prompts.
 							
 						  </p>
 
