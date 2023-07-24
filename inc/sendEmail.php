@@ -1,4 +1,5 @@
 ﻿<?php
+// Not using this code anymore, Netlify forms handles the form submissions
 
 // Replace this with your own email address
 $siteOwnersEmail = 'jonathan.digiorgio04@gmail.com';
