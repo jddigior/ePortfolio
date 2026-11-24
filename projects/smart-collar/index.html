@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart dog collar · Jonathan Di Giorgio</title>
+<meta name="description" content="Electrical lead on a five-person capstone building a collar that tracks a dog&#x27;s vitals.">
+<meta name="color-scheme" content="light dark">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="canonical" href="https://www.jonathandigiorgio.com/projects/smart-collar/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Smart dog collar · Jonathan Di Giorgio">
+<meta property="og:description" content="Electrical lead on a five-person capstone building a collar that tracks a dog&#x27;s vitals.">
+<meta property="og:image" content="https://www.jonathandigiorgio.com/assets/img/hero-1377.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="../../favicon-32x32.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Schibsted+Grotesk:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../assets/site.css?v=20261124">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJ9CX0GBKX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZJ9CX0GBKX');</script>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="wordmark" href="../../">Jonathan Di Giorgio</a>
+    <nav class="nav" aria-label="Main">
+      <a href="../../#work">Work</a>
+      <a href="../../#projects" aria-current="page">Projects</a>
+      <a href="../../#about">About</a>
+      <a class="nav-cta" href="../../assets/docs/Jonathan_DiGiorgio_Resume.pdf" target="_blank" rel="noopener">Résumé <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="proj">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../#projects">← All projects</a><span>09 of 11</span></nav>
+    <header class="proj-head">
+      <p class="proj-kind">Capstone · 2026 to 2027 · In progress</p>
+      <h1>Smart dog collar</h1>
+      <p class="proj-lede">A collar that watches a dog's vitals for early signs of illness. I'm the electrical lead on our five-person team.</p>
+    </header>
+    <div class="proj-facts">
+      <dl class="title-block compact"><div class="tb-cell"><dt>My role</dt><dd>Electrical lead, sensor trade study lead</dd></div><div class="tb-cell"><dt>When</dt><dd>Sept 2026 to Apr 2027, MTE 481/482</dd></div><div class="tb-cell"><dt>Tools</dt><dd>KiCad, power budgeting, LiPo charging, ERM haptics</dd></div></dl>
+      <dl class="figures big"><div><dt>1200 mAh</dt><dd>LiPo</dd></div><div><dt>8 h</dt><dd>runtime target</dd></div><div><dt>12 h</dt><dd>max charge time</dd></div></dl>
+    </div>
+  </div>
+  <div class="wrap proj-hero"><figure class="plate fill diagram-plate"><svg class="diagram" viewBox="0 0 560 400" role="img" aria-label="Block diagram of the collar's power and haptics system">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+<g fill="none" stroke="currentColor" stroke-width="1.4">
+<rect x="20" y="40" width="130" height="56"/><rect x="215" y="40" width="130" height="56"/><rect x="410" y="40" width="130" height="56"/>
+<rect x="215" y="172" width="130" height="56"/><rect x="410" y="172" width="130" height="56"/>
+<rect x="215" y="304" width="130" height="56"/><rect x="410" y="304" width="130" height="56" class="acc"/>
+<path d="M150 68 H213" marker-end="url(#ar)"/><path d="M345 68 H408" marker-end="url(#ar)"/>
+<path d="M475 96 V140 H280 V170" marker-end="url(#ar)"/><path d="M345 200 H408" marker-end="url(#ar)"/>
+<path d="M475 228 V266 H280 V302" marker-end="url(#ar)"/><path d="M345 332 H408" marker-end="url(#ar)"/>
+</g>
+<g font-family="IBM Plex Mono, monospace" font-size="13" fill="currentColor" text-anchor="middle">
+<text x="85" y="66">Charging</text><text x="85" y="82">input</text>
+<text x="280" y="66">LiPo charger</text>
+<text x="475" y="66">1200 mAh LiPo</text><text x="475" y="82">+ fuel gauge</text>
+<text x="280" y="198">3.3 V LDO</text>
+<text x="475" y="198">MCU, sensors</text><text x="475" y="214">and radios</text>
+<text x="280" y="330">ERM driver</text>
+<text x="475" y="330">Haptic motor</text><text x="475" y="346">0.5 to 1.5 g</text>
+</g></svg><figcaption><span class="fig-n">FIG. 1</span> The power and haptics architecture I own, simplified.</figcaption></figure></div>
+  <div class="wrap proj-body">
+    <section class="psec"><h2>What it is</h2><div class="psec-body"><p>Our capstone is a collar that tracks a dog's breathing, heart rate (by ECG) and skin temperature against that dog's own baseline, so it can warn the owner about early signs of illness. It can also call the dog back with a silent haptic cue, and locate it over BLE or GPS and cellular.</p></div></section><section class="psec"><h2>My part</h2><div class="psec-body"><ul class="ticks"><li>I'm the electrical lead, and I ran the sensor trade study that picked the ECG, IMU respiration, temperature and GPS and cellular parts.</li><li>I designed the power and haptics architecture, with the battery sized against an 8-hour runtime and a 12-hour charge target.</li><li>I drew the power and haptics schematic in KiCad, and I own PCB revision A, due in early 2027.</li></ul></div></section><section class="psec"><h2>Targets</h2><div class="psec-body"><ul class="ticks"><li>Respiration within 5 breaths a minute and heart rate within 10 bpm.</li><li>Location within 10 m, updated at least every 30 seconds.</li><li>IP52, survives a 1 m drop, and skin temperature stays at or under 41 °C.</li></ul><p class="note">Still in progress. I'll add results once we test in the winter term.</p></div></section>
+    
+  </div>
+  <nav class="wrap pager" aria-label="More projects">
+    <a href="../../projects/light-switch/"><span>Previous</span>Remote light switch</a>
+    <a href="../../projects/vehicle-dynamics/" class="next"><span>Next</span>Vehicle dynamics in MATLAB</a>
+  </nav>
+</main>
+<footer class="site-foot" id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-line">I'm looking for full-time robotics and mechanical design roles starting summer 2027.</p>
+        <a class="foot-mail" href="mailto:jonathan.digiorgio04@gmail.com">jonathan.digiorgio04@gmail.com</a>
+      </div>
+      <ul class="foot-links">
+        <li><a href="https://www.linkedin.com/in/j-digiorgio/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../assets/docs/Jonathan_DiGiorgio_Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></li>
+        <li><a href="https://github.com/jddigior" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+    <div class="foot-base"><span>© 2026 Jonathan Di Giorgio</span><a href="#top">Back to top ↑</a></div>
+  </div>
+</footer>
+<dialog class="lightbox" aria-label="Image viewer">
+  <button class="lb-close" type="button">Close</button>
+  <button class="lb-prev" type="button" aria-label="Previous image">←</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button class="lb-next" type="button" aria-label="Next image">→</button>
+</dialog>
+<script src="../../assets/site.js?v=20261124" defer></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Axon V2 robotic arm · Jonathan Di Giorgio</title>
+<meta name="description" content="A 6-DOF arm on custom cycloidal and planetary gearboxes. 3 kg payload and about 1 mm repeatability for under $300.">
+<meta name="color-scheme" content="light dark">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="canonical" href="https://www.jonathandigiorgio.com/projects/axon-v2/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Axon V2 robotic arm · Jonathan Di Giorgio">
+<meta property="og:description" content="A 6-DOF arm on custom cycloidal and planetary gearboxes. 3 kg payload and about 1 mm repeatability for under $300.">
+<meta property="og:image" content="https://www.jonathandigiorgio.com/assets/img/hero-1377.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="../../favicon-32x32.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Schibsted+Grotesk:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../assets/site.css?v=20261124">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJ9CX0GBKX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZJ9CX0GBKX');</script>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="wordmark" href="../../">Jonathan Di Giorgio</a>
+    <nav class="nav" aria-label="Main">
+      <a href="../../#work">Work</a>
+      <a href="../../#projects" aria-current="page">Projects</a>
+      <a href="../../#about">About</a>
+      <a class="nav-cta" href="../../assets/docs/Jonathan_DiGiorgio_Resume.pdf" target="_blank" rel="noopener">Résumé <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="proj">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../#projects">← All projects</a><span>01 of 11</span></nav>
+    <header class="proj-head">
+      <p class="proj-kind">Personal project · 2026</p>
+      <h1>Axon V2 robotic arm</h1>
+      <p class="proj-lede">A six-axis arm built around gearboxes we designed and printed ourselves. It lifts 3 kg, reaches 690 mm and repeats to about 1 mm, and the parts cost $296.70.</p>
+    </header>
+    <div class="proj-facts">
+      <dl class="title-block compact"><div class="tb-cell"><dt>My role</dt><dd>Mechanical and electrical design, co-designed with Ali Muizz</dd></div><div class="tb-cell"><dt>When</dt><dd>2026</dd></div><div class="tb-cell"><dt>Tools</dt><dd>Onshape, 3D printing, NEMA 14, 17 and 23 steppers, TMC2209, servos</dd></div></dl>
+      <dl class="figures big"><div><dt>3 kg</dt><dd>max payload</dd></div><div><dt>690 mm</dt><dd>reach</dd></div><div><dt>~1 mm</dt><dd>repeatability</dd></div><div><dt>$297</dt><dd>in parts</dd></div></dl>
+    </div>
+  </div>
+  <div class="wrap proj-hero"><figure class="plate fill"><a class="zoom" href="../../assets/img/hero-1377.webp" data-caption="Axon V2 on its weighted base plate." aria-label="Open full size: Axon V2 robot arm on a wooden ledge"><img src="../../assets/img/hero-1100.webp" srcset="../../assets/img/hero-700.webp 700w, ../../assets/img/hero-1100.webp 1100w, ../../assets/img/hero-1377.webp 1377w" sizes="(min-width: 1280px) 1200px, 100vw" width="1377" height="775" alt="Axon V2 robot arm on a wooden ledge" decoding="async" loading="lazy"></a><figcaption><span class="fig-n">FIG. 1</span> Axon V2 on its weighted base plate.</figcaption></figure></div>
+  <div class="wrap proj-body">
+    <section class="psec"><h2>Approach</h2><div class="psec-body"><p>I started from constraints and criteria, then sketched the layout and ran first-principles torque calculations for every joint before modelling anything in Onshape. Those numbers set the motor sizes (a NEMA 23 at the shoulder, NEMA 17s and a NEMA 14 further out) and the reductions, up to 58.5:1 at the shoulder.</p><p>Everything is designed for 3D printing around off-the-shelf bearings, belts and motors, which made each iteration quick to print and test.</p></div></section><section class="psec wide" id="subsystems"><h2>Subsystems</h2><div class="psec-body"><p class="hint">Pick a number on the render or a subsystem from the list.</p><div class="explorer">
+  <div class="ex-map">
+    <div class="ex-img"><img src="../../assets/img/axon-labelled-1500.webp" srcset="../../assets/img/axon-labelled-800.webp 800w, ../../assets/img/axon-labelled-1500.webp 1500w" sizes="(min-width: 1100px) 440px, 100vw" width="1500" height="1128" alt="Render of Axon V2 with its five subsystems numbered" decoding="async" loading="lazy"><button type="button" class="spot" data-sub="1" style="--x:54.1%;--y:72.3%" aria-label="1. Rotating base"></button><button type="button" class="spot" data-sub="2" style="--x:44.3%;--y:4.9%" aria-label="2. Cycloidal gearboxes"></button><button type="button" class="spot" data-sub="2" style="--x:19.6%;--y:40.9%" aria-label="2. Cycloidal gearboxes"></button><button type="button" class="spot" data-sub="3" style="--x:69%;--y:18%" aria-label="3. Planetary elbow roll"></button><button type="button" class="spot" data-sub="4" style="--x:86.6%;--y:35.9%" aria-label="4. Differential wrist"></button><button type="button" class="spot" data-sub="5" style="--x:95%;--y:58.2%" aria-label="5. Fin-ray gripper"></button></div>
+    <div class="tabs" role="tablist" aria-label="Subsystems"><button type="button" class="tab" data-sub="1" role="tab" aria-selected="true"><span>1</span>Rotating base</button><button type="button" class="tab" data-sub="2" role="tab" aria-selected="false"><span>2</span>Cycloidal gearboxes</button><button type="button" class="tab" data-sub="3" role="tab" aria-selected="false"><span>3</span>Planetary elbow roll</button><button type="button" class="tab" data-sub="4" role="tab" aria-selected="false"><span>4</span>Differential wrist</button><button type="button" class="tab" data-sub="5" role="tab" aria-selected="false"><span>5</span>Fin-ray gripper</button></div>
+  </div>
+  <div class="ex-panels"><article class="sub" id="sub-1" data-sub="1" role="tabpanel">
+  <figure class="plate fill"><a class="zoom" href="../../assets/img/axon-base-1500.webp" data-caption="Rotating base, section view. Click to enlarge." aria-label="Open full size: Labelled section view of the rotating base"><img src="../../assets/img/axon-base-1500.webp" srcset="../../assets/img/axon-base-800.webp 800w, ../../assets/img/axon-base-1500.webp 1500w" sizes="(min-width: 1240px) 820px, 100vw" width="1500" height="844" alt="Labelled section view of the rotating base" decoding="async" loading="lazy"></a><figcaption>Rotating base, section view. Click to enlarge.</figcaption></figure>
+  <div class="sub-text"><h3>Rotating base</h3><p>A belt drive turns the whole arm on bearings. The base also holds the electronics, with two fans pushing air out through vents in the side.</p><p class="spec">NEMA 17 · 5:1 belt · 1.9 Nm · ±170°</p></div>
+</article><article class="sub" id="sub-2" data-sub="2" role="tabpanel">
+  <figure class="plate fill"><a class="zoom" href="../../assets/img/axon-cycloidal-1500.webp" data-caption="Cycloidal gearboxes, section view. Click to enlarge." aria-label="Open full size: Labelled section view of the cycloidal gearboxes"><img src="../../assets/img/axon-cycloidal-1500.webp" srcset="../../assets/img/axon-cycloidal-800.webp 800w, ../../assets/img/axon-cycloidal-1500.webp 1500w" sizes="(min-width: 1240px) 820px, 100vw" width="1500" height="844" alt="Labelled section view of the cycloidal gearboxes" decoding="async" loading="lazy"></a><figcaption>Cycloidal gearboxes, section view. Click to enlarge.</figcaption></figure>
+  <div class="sub-text"><h3>Cycloidal gearboxes</h3><p>Used at the shoulder and the elbow. A belt drives the eccentric input shaft, and the cycloidal discs roll against fixed pins in the housing. The housing is the output, so the gearbox doubles as the joint.</p><p class="spec">Shoulder · NEMA 23 · 58.5:1 · 30 Nm · −5° to 225°<br>Elbow · NEMA 17 · 52:1 · 8.3 Nm · ±100°</p></div>
+</article><article class="sub" id="sub-3" data-sub="3" role="tabpanel">
+  <figure class="plate fill"><a class="zoom" href="../../assets/img/axon-planetary-1500.webp" data-caption="Planetary elbow roll, section view. Click to enlarge." aria-label="Open full size: Labelled section view of the planetary elbow roll"><img src="../../assets/img/axon-planetary-1500.webp" srcset="../../assets/img/axon-planetary-800.webp 800w, ../../assets/img/axon-planetary-1500.webp 1500w" sizes="(min-width: 1240px) 820px, 100vw" width="1500" height="844" alt="Labelled section view of the planetary elbow roll" decoding="async" loading="lazy"></a><figcaption>Planetary elbow roll, section view. Click to enlarge.</figcaption></figure>
+  <div class="sub-text"><h3>Planetary elbow roll</h3><p>The sixth axis. A planetary stage rolls the forearm so the gripper can tilt sideways as well as up and down.</p><p class="spec">NEMA 14 · 4:1 · 0.56 Nm · ±150°</p></div>
+</article><article class="sub" id="sub-4" data-sub="4" role="tabpanel">
+  <figure class="plate fill"><a class="zoom" href="../../assets/img/axon-wrist-1500.webp" data-caption="Differential wrist, section view. Click to enlarge." aria-label="Open full size: Labelled section view of the differential wrist"><img src="../../assets/img/axon-wrist-1500.webp" srcset="../../assets/img/axon-wrist-800.webp 800w, ../../assets/img/axon-wrist-1500.webp 1500w" sizes="(min-width: 1240px) 820px, 100vw" width="1500" height="844" alt="Labelled section view of the differential wrist" decoding="async" loading="lazy"></a><figcaption>Differential wrist, section view. Click to enlarge.</figcaption></figure>
+  <div class="sub-text"><h3>Differential wrist</h3><p>Two servos drive a set of bevel gears. Turning both the same way pitches the wrist, and turning them in opposite directions rolls it.</p><p class="spec">2 × 25 kg·cm servos · 2.6 Nm · pitch ±90°, roll ±170°</p></div>
+</article><article class="sub" id="sub-5" data-sub="5" role="tabpanel">
+  <figure class="plate fill"><a class="zoom" href="../../assets/img/axon-gripper-1500.webp" data-caption="Fin-ray gripper, section view. Click to enlarge." aria-label="Open full size: Labelled section view of the fin-ray gripper"><img src="../../assets/img/axon-gripper-1500.webp" srcset="../../assets/img/axon-gripper-800.webp 800w, ../../assets/img/axon-gripper-1500.webp 1500w" sizes="(min-width: 1240px) 820px, 100vw" width="1500" height="844" alt="Labelled section view of the fin-ray gripper" decoding="async" loading="lazy"></a><figcaption>Fin-ray gripper, section view. Click to enlarge.</figcaption></figure>
+  <div class="sub-text"><h3>Fin-ray gripper</h3><p>A parallel four-bar keeps the fingers parallel as they close. The fin-ray fingers bend around whatever they grab, so it can hold an egg, a pencil or a billiard ball.</p><p class="spec">20 kg·cm servo · 70 mm opening</p></div>
+</article></div>
+</div></div></section><section class="psec"><h2>Electronics and control</h2><div class="psec-body"><p>I owned the electrical side, which covered the schematics for 4 stepper motors and 3 servos and the robot control firmware. Inverse kinematics I wrote runs on a PC and streams joint targets to a microcontroller, which drives the steppers through TMC2209 drivers and runs a homing sequence at startup.</p></div></section><section class="psec"><h2>Iterations</h2><div class="psec-body"><p>The arm went through three versions. Later ones added mechanical hard stops, two cooling fans in the base, and magnetic cover panels that come off for repairs and cable routing.</p><figure class="plate fill"><a class="zoom" href="../../assets/img/axon-iterations-1500.webp" data-caption="The three versions, left to right." aria-label="Open full size: Three versions of the arm side by side, labelled V1, V2 and V3"><img src="../../assets/img/axon-iterations-1500.webp" srcset="../../assets/img/axon-iterations-800.webp 800w, ../../assets/img/axon-iterations-1500.webp 1500w" sizes="(min-width: 1100px) 900px, 100vw" width="1500" height="640" alt="Three versions of the arm side by side, labelled V1, V2 and V3" decoding="async" loading="lazy"></a><figcaption><span class="fig-n">FIG. 2</span> The three versions, left to right.</figcaption></figure></div></section><section class="psec"><h2>Testing</h2><div class="psec-body"><p>The shoulder lifted 3 kg, and the shoulder and elbow each held 1.5 kg at full reach. At 3 kg the wrist starts to flex. Gripping tests covered a billiard ball, a mouse, an egg and a pencil.</p><div class="figgrid c2 matched"><figure class="plate fill"><a class="zoom" href="../../assets/img/axon-3kg-1200.webp" data-caption="The 3 kg test load." aria-label="Open full size: Test weight reading 3009 grams on a kitchen scale"><img src="../../assets/img/axon-3kg-1200.webp" srcset="../../assets/img/axon-3kg-700.webp 700w, ../../assets/img/axon-3kg-1200.webp 1200w" sizes="(min-width: 1100px) 900px, 100vw" width="1500" height="1165" alt="Test weight reading 3009 grams on a kitchen scale" decoding="async" loading="lazy"></a><figcaption><span class="fig-n">FIG. 3</span> The 3 kg test load.</figcaption></figure><figure class="plate fill"><a class="zoom" href="../../assets/img/axon-panels-1200.webp" data-caption="Cover panels off." aria-label="Open full size: Axon V2 with its magnetic cover panels removed"><img src="../../assets/img/axon-panels-1200.webp" srcset="../../assets/img/axon-panels-700.webp 700w, ../../assets/img/axon-panels-1200.webp 1200w" sizes="(min-width: 1100px) 900px, 100vw" width="1500" height="1305" alt="Axon V2 with its magnetic cover panels removed" decoding="async" loading="lazy"></a><figcaption><span class="fig-n">FIG. 4</span> Cover panels off.</figcaption></figure></div><figure class="plate" style="--nat:1288px"><a class="zoom" href="../../assets/img/axon-reach-1288.webp" data-caption="Reachable workspace, 172 mm to 675 mm from the base axis." aria-label="Open full size: Top-down plot of the arm&#x27;s reach, 172 mm inner radius and 675 mm outer radius"><img src="../../assets/img/axon-reach-1288.webp" srcset="../../assets/img/axon-reach-800.webp 800w, ../../assets/img/axon-reach-1288.webp 1288w" sizes="(min-width: 1100px) 900px, 100vw" width="1288" height="794" alt="Top-down plot of the arm&#x27;s reach, 172 mm inner radius and 675 mm outer radius" decoding="async" loading="lazy"></a><figcaption><span class="fig-n">FIG. 5</span> Reachable workspace, 172 mm to 675 mm from the base axis.</figcaption></figure></div></section><section class="psec"><h2>Specifications</h2><div class="psec-body"><h3 class="mini-h">Joints</h3><div class="table-wrap"><table class="data">
+<thead><tr><th scope="col">Joint</th><th scope="col">Actuator</th><th scope="col">Reduction</th><th scope="col">Expected torque (Nm)</th><th scope="col">Range</th></tr></thead>
+<tbody><tr><th scope="row">Base</th><td>NEMA 17 stepper</td><td>5:1 belt</td><td>1.89</td><td>±170°</td></tr><tr><th scope="row">Shoulder</th><td>NEMA 23 stepper</td><td>58.5:1 belt + cycloidal</td><td>30.33</td><td>−5° to 225°</td></tr><tr><th scope="row">Elbow pitch</th><td>NEMA 17 stepper</td><td>52:1 belt + cycloidal</td><td>8.26</td><td>±100°</td></tr><tr><th scope="row">Elbow roll</th><td>NEMA 14 stepper</td><td>4:1 planetary</td><td>0.56</td><td>±150°</td></tr><tr><th scope="row">Wrist pitch, roll</th><td>2 × 25 kg·cm servo</td><td>Bevel differential</td><td>2.57</td><td>±90°, ±170°</td></tr><tr><th scope="row">Gripper</th><td>20 kg·cm servo</td><td>Parallel four-bar</td><td></td><td>70 mm opening</td></tr></tbody></table></div><h3 class="mini-h">Parts cost</h3><ul class="cost"><li><span class="c-l">Motors and electronics</span><span class="c-bar"><span style="width:100.0%"></span></span><span class="c-v">$89.90</span></li><li><span class="c-l">Rotating base</span><span class="c-bar"><span style="width:77.0%"></span></span><span class="c-v">$69.24</span></li><li><span class="c-l">Elbow pitch gearbox</span><span class="c-bar"><span style="width:37.9%"></span></span><span class="c-v">$34.06</span></li><li><span class="c-l">Wrist differential</span><span class="c-bar"><span style="width:36.3%"></span></span><span class="c-v">$32.66</span></li><li><span class="c-l">Shoulder gearbox</span><span class="c-bar"><span style="width:35.3%"></span></span><span class="c-v">$31.70</span></li><li><span class="c-l">Gripper</span><span class="c-bar"><span style="width:22.6%"></span></span><span class="c-v">$20.35</span></li><li><span class="c-l">Shoulder and elbow structures</span><span class="c-bar"><span style="width:13.7%"></span></span><span class="c-v">$12.32</span></li><li><span class="c-l">Elbow roll gearbox</span><span class="c-bar"><span style="width:7.2%"></span></span><span class="c-v">$6.48</span></li></ul><p class="cost-total">Total $296.70 in parts. The arm weighs 5.5 kg, or 11.5 kg on its weighted base plate.</p></div></section>
+    <div class="ext"><a href="https://cad.onshape.com/documents/89cf0009362a9f4b36c676c7/w/fa1475b775bea1364fdb21dd/e/bf43eb84fbcd42c9c9dab1a0?renderMode=0&amp;uiState=6a7958dae6e9bfac068b8839" target="_blank" rel="noopener">Live CAD in Onshape</a><a href="https://www.alimuizz.com/projects/6-dof-robot-arm" target="_blank" rel="noopener">Ali Muizz's write-up</a></div>
+  </div>
+  <nav class="wrap pager" aria-label="More projects">
+    <a href="../../projects/vent-flap/"><span>Previous</span>Vent flap replacement</a>
+    <a href="../../projects/warg-drone/" class="next"><span>Next</span>Drone hardware for WARG</a>
+  </nav>
+</main>
+<footer class="site-foot" id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-line">I'm looking for full-time robotics and mechanical design roles starting summer 2027.</p>
+        <a class="foot-mail" href="mailto:jonathan.digiorgio04@gmail.com">jonathan.digiorgio04@gmail.com</a>
+      </div>
+      <ul class="foot-links">
+        <li><a href="https://www.linkedin.com/in/j-digiorgio/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../assets/docs/Jonathan_DiGiorgio_Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></li>
+        <li><a href="https://github.com/jddigior" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+    <div class="foot-base"><span>© 2026 Jonathan Di Giorgio</span><a href="#top">Back to top ↑</a></div>
+  </div>
+</footer>
+<dialog class="lightbox" aria-label="Image viewer">
+  <button class="lb-close" type="button">Close</button>
+  <button class="lb-prev" type="button" aria-label="Previous image">←</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button class="lb-next" type="button" aria-label="Next image">→</button>
+</dialog>
+<script src="../../assets/site.js?v=20261124" defer></script>
+</body>
+</html>

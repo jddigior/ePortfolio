@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Axon V1 differential wrist · Jonathan Di Giorgio</title>
+<meta name="description" content="A two-axis belt-driven differential wrist. 1.3 Nm, near-zero backlash, under $50.">
+<meta name="color-scheme" content="light dark">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="canonical" href="https://www.jonathandigiorgio.com/projects/axon-v1/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Axon V1 differential wrist · Jonathan Di Giorgio">
+<meta property="og:description" content="A two-axis belt-driven differential wrist. 1.3 Nm, near-zero backlash, under $50.">
+<meta property="og:image" content="https://www.jonathandigiorgio.com/assets/img/axon-v1-956.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="../../favicon-32x32.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Schibsted+Grotesk:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../assets/site.css?v=20261124">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJ9CX0GBKX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZJ9CX0GBKX');</script>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="wordmark" href="../../">Jonathan Di Giorgio</a>
+    <nav class="nav" aria-label="Main">
+      <a href="../../#work">Work</a>
+      <a href="../../#projects" aria-current="page">Projects</a>
+      <a href="../../#about">About</a>
+      <a class="nav-cta" href="../../assets/docs/Jonathan_DiGiorgio_Resume.pdf" target="_blank" rel="noopener">Résumé <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="proj">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../#projects">← All projects</a><span>05 of 11</span></nav>
+    <header class="proj-head">
+      <p class="proj-kind">Personal project</p>
+      <h1>Axon V1 differential wrist</h1>
+      <p class="proj-lede">The two-axis wrist I built before the full arm, to learn differentials, stepper control and synchronized motion.</p>
+    </header>
+    <div class="proj-facts">
+      <dl class="title-block compact"><div class="tb-cell"><dt>My role</dt><dd>Solo design and build</dd></div><div class="tb-cell"><dt>Tools</dt><dd>Onshape, Arduino, AccelStepper, TMC2208</dd></div></dl>
+      <dl class="figures big"><div><dt>1.3 Nm</dt><dd>output torque</dd></div><div><dt>~0</dt><dd>backlash</dd></div><div><dt>&lt; $50</dt><dd>in parts</dd></div><div><dt>25 pages</dt><dd>design report</dd></div></dl>
+    </div>
+  </div>
+  <div class="wrap proj-hero"><figure class="plate" style="--nat:956px"><a class="zoom" href="../../assets/img/axon-v1-956.webp" data-caption="Housings, the exploded assembly, and the wrist on its test rig." aria-label="Open full size: Axon V1 wrist housings, exploded view and test rig"><img src="../../assets/img/axon-v1-956.webp" srcset="../../assets/img/axon-v1-956.webp 956w" sizes="(min-width: 1280px) 1200px, 100vw" width="956" height="611" alt="Axon V1 wrist housings, exploded view and test rig" decoding="async" loading="lazy"></a><figcaption><span class="fig-n">FIG. 1</span> Housings, the exploded assembly, and the wrist on its test rig.</figcaption></figure></div>
+  <div class="wrap proj-body">
+    <section class="psec"><h2>What it is</h2><div class="psec-body"><p>A two-axis robotic wrist, built as the first piece of a 6-DOF arm. Two steppers drive a 3D-printed differential through timing belts, which also multiply the torque. An Arduino Uno running AccelStepper keeps both axes in sync using a synchronization routine I wrote, and you can drive it with an analog joystick or send serial commands for tuning.</p></div></section><section class="psec"><h2>How I built it</h2><div class="psec-body"><ul class="ticks"><li>Set constraints and criteria first, then sketched and researched the overall layout.</li><li>Modelled it in Onshape for 3D printing, with off-the-shelf hardware where it made sense.</li><li>Ran it open loop on TMC2208 drivers, with both steppers homing off a single limit switch.</li><li>Stress tested it on a rig I designed to find its limits, and wrote it all up in a 25-page report.</li></ul></div></section><section class="psec"><h2>What I learned</h2><div class="psec-body"><p>It met every constraint I set, with about 1.3 Nm of output torque, smooth coordinated motion and close to zero backlash, for under $50. It also gave me a list for the next version, with closed-loop control, contactless homing and better wire routing at the top. Most of that went into Axon V2.</p></div></section>
+    <div class="ext"><a href="https://cad.onshape.com/documents/6f3381f7019f99a0050790c5/w/73012f0bdf031a2263803ee2/e/5793963b5aeb29827f76694e?renderMode=0&amp;uiState=683cbac90496457e6057e083" target="_blank" rel="noopener">Live CAD and BOM in Onshape</a><a href="https://app.cirkitdesigner.com/project/1e2f7573-cb2f-44a8-8ccd-d9841350be9a" target="_blank" rel="noopener">Wiring diagram</a></div>
+  </div>
+  <nav class="wrap pager" aria-label="More projects">
+    <a href="../../projects/blade-off-containment/"><span>Previous</span>Blade-off containment study</a>
+    <a href="../../projects/chess-robot/" class="next"><span>Next</span>Autonomous chess robot</a>
+  </nav>
+</main>
+<footer class="site-foot" id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-line">I'm looking for full-time robotics and mechanical design roles starting summer 2027.</p>
+        <a class="foot-mail" href="mailto:jonathan.digiorgio04@gmail.com">jonathan.digiorgio04@gmail.com</a>
+      </div>
+      <ul class="foot-links">
+        <li><a href="https://www.linkedin.com/in/j-digiorgio/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../assets/docs/Jonathan_DiGiorgio_Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></li>
+        <li><a href="https://github.com/jddigior" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+    <div class="foot-base"><span>© 2026 Jonathan Di Giorgio</span><a href="#top">Back to top ↑</a></div>
+  </div>
+</footer>
+<dialog class="lightbox" aria-label="Image viewer">
+  <button class="lb-close" type="button">Close</button>
+  <button class="lb-prev" type="button" aria-label="Previous image">←</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button class="lb-next" type="button" aria-label="Next image">→</button>
+</dialog>
+<script src="../../assets/site.js?v=20261124" defer></script>
+</body>
+</html>

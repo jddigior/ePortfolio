@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Remote light switch · Jonathan Di Giorgio</title>
+<meta name="description" content="An IR-controlled servo that flips a wall switch. 99% success and a 3-day battery.">
+<meta name="color-scheme" content="light dark">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="canonical" href="https://www.jonathandigiorgio.com/projects/light-switch/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Remote light switch · Jonathan Di Giorgio">
+<meta property="og:description" content="An IR-controlled servo that flips a wall switch. 99% success and a 3-day battery.">
+<meta property="og:image" content="https://www.jonathandigiorgio.com/assets/img/light-cover-1400.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="../../favicon-32x32.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Schibsted+Grotesk:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../assets/site.css?v=20261124">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJ9CX0GBKX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZJ9CX0GBKX');</script>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="wordmark" href="../../">Jonathan Di Giorgio</a>
+    <nav class="nav" aria-label="Main">
+      <a href="../../#work">Work</a>
+      <a href="../../#projects" aria-current="page">Projects</a>
+      <a href="../../#about">About</a>
+      <a class="nav-cta" href="../../assets/docs/Jonathan_DiGiorgio_Resume.pdf" target="_blank" rel="noopener">Résumé <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="proj">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../#projects">← All projects</a><span>08 of 11</span></nav>
+    <header class="proj-head">
+      <p class="proj-kind">Personal project</p>
+      <h1>Remote light switch</h1>
+      <p class="proj-lede">A servo unit that flips my bedroom light switch from an IR remote, and comes off without a trace.</p>
+    </header>
+    <div class="proj-facts">
+      <dl class="title-block compact"><div class="tb-cell"><dt>My role</dt><dd>Solo, mechanical, electrical and firmware</dd></div><div class="tb-cell"><dt>Tools</dt><dd>Onshape, C++, IR, servo, heat-set inserts</dd></div></dl>
+      <dl class="figures big"><div><dt>99%</dt><dd>flip success</dd></div><div><dt>3 days</dt><dd>battery life</dd></div></dl>
+    </div>
+  </div>
+  <div class="wrap proj-hero"><figure class="plate fill"><a class="zoom" href="../../assets/img/light-cover-1400.webp" data-caption="Bench prototype, wired up next to the switch." aria-label="Open full size: Bench prototype with the microcontroller wired to the switch unit"><img src="../../assets/img/light-cover-1400.webp" srcset="../../assets/img/light-cover-700.webp 700w, ../../assets/img/light-cover-1400.webp 1400w" sizes="(min-width: 1280px) 1200px, 100vw" width="2208" height="1512" alt="Bench prototype with the microcontroller wired to the switch unit" decoding="async" loading="lazy"></a><figcaption><span class="fig-n">FIG. 1</span> Bench prototype, wired up next to the switch.</figcaption></figure></div>
+  <div class="wrap proj-body">
+    <section class="psec"><h2>Why I built it</h2><div class="psec-body"><p>I got tired of getting out of bed to turn the light off. This servo unit sits over a normal wall switch and flips it when it gets a signal from an IR remote. I did the mechanical, electrical and software sides myself.</p></div></section><section class="psec"><h2>How</h2><div class="psec-body"><ul class="ticks"><li>Sized the servo and battery with basic dynamics and power calculations.</li><li>An IR receiver takes commands from the remote, and a microcontroller turns them into servo motion.</li><li>Designed the housings in Onshape with heat-set inserts for fastening, and soldered the electronics.</li><li>Wrote all of the control code in C++.</li></ul><div class="figgrid c3 "><figure class="plate" style="--nat:432px"><a class="zoom" href="../../assets/img/light-mounted-432.webp" data-caption="Mounted over the switch." aria-label="Open full size: Servo unit mounted over a wall light switch"><img src="../../assets/img/light-mounted-432.webp" srcset="../../assets/img/light-mounted-432.webp 432w" sizes="(min-width: 1100px) 900px, 100vw" width="432" height="576" alt="Servo unit mounted over a wall light switch" decoding="async" loading="lazy"></a><figcaption><span class="fig-n">FIG. 2</span> Mounted over the switch.</figcaption></figure><figure class="plate" style="--nat:432px"><a class="zoom" href="../../assets/img/light-side-432.webp" data-caption="Printed housing on the wall." aria-label="Open full size: Small printed housing mounted on the wall beside the switch"><img src="../../assets/img/light-side-432.webp" srcset="../../assets/img/light-side-432.webp 432w" sizes="(min-width: 1100px) 900px, 100vw" width="432" height="576" alt="Small printed housing mounted on the wall beside the switch" decoding="async" loading="lazy"></a><figcaption><span class="fig-n">FIG. 3</span> Printed housing on the wall.</figcaption></figure><figure class="plate" style="--nat:432px"><a class="zoom" href="../../assets/img/light-lit-432.webp" data-caption="Housing with its status light on." aria-label="Open full size: Black printed housing with a blue light inside"><img src="../../assets/img/light-lit-432.webp" srcset="../../assets/img/light-lit-432.webp 432w" sizes="(min-width: 1100px) 900px, 100vw" width="432" height="576" alt="Black printed housing with a blue light inside" decoding="async" loading="lazy"></a><figcaption><span class="fig-n">FIG. 4</span> Housing with its status light on.</figcaption></figure></div></div></section><section class="psec"><h2>Results</h2><div class="psec-body"><ul class="ticks"><li>Flips the switch correctly 99% of the time.</li><li>The battery lasts about 3 days.</li><li>You can still flip the switch by hand, and it comes off without leaving a mark, which matters in a rental.</li></ul></div></section>
+    
+  </div>
+  <nav class="wrap pager" aria-label="More projects">
+    <a href="../../projects/cycloidal-drive/"><span>Previous</span>Cycloidal drive study</a>
+    <a href="../../projects/smart-collar/" class="next"><span>Next</span>Smart dog collar</a>
+  </nav>
+</main>
+<footer class="site-foot" id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-line">I'm looking for full-time robotics and mechanical design roles starting summer 2027.</p>
+        <a class="foot-mail" href="mailto:jonathan.digiorgio04@gmail.com">jonathan.digiorgio04@gmail.com</a>
+      </div>
+      <ul class="foot-links">
+        <li><a href="https://www.linkedin.com/in/j-digiorgio/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../assets/docs/Jonathan_DiGiorgio_Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></li>
+        <li><a href="https://github.com/jddigior" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+    <div class="foot-base"><span>© 2026 Jonathan Di Giorgio</span><a href="#top">Back to top ↑</a></div>
+  </div>
+</footer>
+<dialog class="lightbox" aria-label="Image viewer">
+  <button class="lb-close" type="button">Close</button>
+  <button class="lb-prev" type="button" aria-label="Previous image">←</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button class="lb-next" type="button" aria-label="Next image">→</button>
+</dialog>
+<script src="../../assets/site.js?v=20261124" defer></script>
+</body>
+</html>

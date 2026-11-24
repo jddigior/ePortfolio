@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autonomous chess robot · Jonathan Di Giorgio</title>
+<meta name="description" content="Computer vision, Stockfish and a 3-axis gantry. It never lost a game.">
+<meta name="color-scheme" content="light dark">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="canonical" href="https://www.jonathandigiorgio.com/projects/chess-robot/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Autonomous chess robot · Jonathan Di Giorgio">
+<meta property="og:description" content="Computer vision, Stockfish and a 3-axis gantry. It never lost a game.">
+<meta property="og:image" content="https://www.jonathandigiorgio.com/assets/img/chess-cover-1400.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="../../favicon-32x32.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Schibsted+Grotesk:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../assets/site.css?v=20261124">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJ9CX0GBKX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZJ9CX0GBKX');</script>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="wordmark" href="../../">Jonathan Di Giorgio</a>
+    <nav class="nav" aria-label="Main">
+      <a href="../../#work">Work</a>
+      <a href="../../#projects" aria-current="page">Projects</a>
+      <a href="../../#about">About</a>
+      <a class="nav-cta" href="../../assets/docs/Jonathan_DiGiorgio_Resume.pdf" target="_blank" rel="noopener">Résumé <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="proj">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../#projects">← All projects</a><span>06 of 11</span></nav>
+    <header class="proj-head">
+      <p class="proj-kind">Course project · 2023</p>
+      <h1>Autonomous chess robot</h1>
+      <p class="proj-lede">A robot that sees its opponent's move and plays back on a real board. I led the team of four.</p>
+    </header>
+    <div class="proj-facts">
+      <dl class="title-block compact"><div class="tb-cell"><dt>My role</dt><dd>Team lead, team of 4</dd></div><div class="tb-cell"><dt>When</dt><dd>Jan to Apr 2023, ME 101</dd></div><div class="tb-cell"><dt>Tools</dt><dd>SOLIDWORKS, AutoCAD, Python, OpenCV, RobotC, EV3</dd></div></dl>
+      <dl class="figures big"><div><dt>95%+</dt><dd>moves made correctly</dd></div><div><dt>95%+</dt><dd>opponent moves read correctly</dd></div><div><dt>0</dt><dd>games lost</dd></div></dl>
+    </div>
+  </div>
+  <div class="wrap proj-hero"><figure class="plate fill"><a class="zoom" href="../../assets/img/chess-cover-1400.webp" data-caption="The gantry over the board, mid-game." aria-label="Open full size: The chess robot&#x27;s gantry over a board mid-game"><img src="../../assets/img/chess-cover-1400.webp" srcset="../../assets/img/chess-cover-700.webp 700w, ../../assets/img/chess-cover-1400.webp 1400w" sizes="(min-width: 1280px) 1200px, 100vw" width="2400" height="1800" alt="The chess robot&#x27;s gantry over a board mid-game" decoding="async" loading="lazy"></a><figcaption><span class="fig-n">FIG. 1</span> The gantry over the board, mid-game.</figcaption></figure></div>
+  <div class="wrap proj-body">
+    <section class="psec"><h2>What it is</h2><div class="psec-body"><p>I led a team of four building a robot that plays a full game of chess against a person with no help. A camera and OpenCV pick up the opponent's move, the Stockfish engine chooses a reply, and Python sends instructions to an EV3 brick running RobotC, which drives a 3-axis gantry with a gripper to move the piece.</p><div class="video"><iframe src="https://player.vimeo.com/video/843717067?h=3e0f911d2c&amp;dnt=1&amp;title=0&amp;byline=0&amp;portrait=0" title="The chess robot playing a game" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe></div></div></section><section class="psec"><h2>How we built it</h2><div class="psec-body"><ul class="ticks"><li>Built the gantry from belts, racks and pinions, wheels, LEGO and Tetrix parts, plus housings, racks and guides I modelled in SOLIDWORKS and AutoCAD and then 3D printed or laser cut.</li><li>Ran SOLIDWORKS FEA to choose a structure that spread the load and wouldn't tip.</li><li>Planned the term with a work breakdown structure and Gantt chart, and finished on schedule.</li></ul><div class="figgrid c2 "><figure class="plate" style="--nat:908px"><a class="zoom" href="../../assets/img/chess-setup-908.webp" data-caption="The full setup. The laptop runs vision and the engine." aria-label="Open full size: The full setup, with a laptop running the vision and engine beside the board"><img src="../../assets/img/chess-setup-908.webp" srcset="../../assets/img/chess-setup-908.webp 908w" sizes="(min-width: 1100px) 900px, 100vw" width="908" height="1210" alt="The full setup, with a laptop running the vision and engine beside the board" decoding="async" loading="lazy"></a><figcaption><span class="fig-n">FIG. 2</span> The full setup. The laptop runs vision and the engine.</figcaption></figure><figure class="plate" style="--nat:768px"><a class="zoom" href="../../assets/img/chess-cad-768.webp" data-caption="One of the printed gantry parts in CAD." aria-label="Open full size: CAD render of a 3D-printed gantry part"><img src="../../assets/img/chess-cad-768.webp" srcset="../../assets/img/chess-cad-768.webp 768w" sizes="(min-width: 1100px) 900px, 100vw" width="768" height="432" alt="CAD render of a 3D-printed gantry part" decoding="async" loading="lazy"></a><figcaption><span class="fig-n">FIG. 3</span> One of the printed gantry parts in CAD.</figcaption></figure></div></div></section><section class="psec"><h2>Results</h2><div class="psec-body"><ul class="ticks"><li>Moved pieces correctly more than 95% of the time.</li><li>Read the opponent's move correctly more than 95% of the time.</li><li>Never lost a game, with a theoretical rating of 3620 Elo.</li></ul></div></section>
+    <div class="ext"><a href="../../assets/docs/chess-robot-report.pdf" target="_blank" rel="noopener">Design report (PDF)</a></div>
+  </div>
+  <nav class="wrap pager" aria-label="More projects">
+    <a href="../../projects/axon-v1/"><span>Previous</span>Axon V1 differential wrist</a>
+    <a href="../../projects/cycloidal-drive/" class="next"><span>Next</span>Cycloidal drive study</a>
+  </nav>
+</main>
+<footer class="site-foot" id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-line">I'm looking for full-time robotics and mechanical design roles starting summer 2027.</p>
+        <a class="foot-mail" href="mailto:jonathan.digiorgio04@gmail.com">jonathan.digiorgio04@gmail.com</a>
+      </div>
+      <ul class="foot-links">
+        <li><a href="https://www.linkedin.com/in/j-digiorgio/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../assets/docs/Jonathan_DiGiorgio_Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></li>
+        <li><a href="https://github.com/jddigior" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+    <div class="foot-base"><span>© 2026 Jonathan Di Giorgio</span><a href="#top">Back to top ↑</a></div>
+  </div>
+</footer>
+<dialog class="lightbox" aria-label="Image viewer">
+  <button class="lb-close" type="button">Close</button>
+  <button class="lb-prev" type="button" aria-label="Previous image">←</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button class="lb-next" type="button" aria-label="Next image">→</button>
+</dialog>
+<script src="../../assets/site.js?v=20261124" defer></script>
+</body>
+</html>

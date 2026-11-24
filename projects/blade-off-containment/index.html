@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blade-off containment study · Jonathan Di Giorgio</title>
+<meta name="description" content="An LS-DYNA study of a compressor blade breaking off in flight. The data went toward FAA engine certification.">
+<meta name="color-scheme" content="light dark">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="canonical" href="https://www.jonathandigiorgio.com/projects/blade-off-containment/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blade-off containment study · Jonathan Di Giorgio">
+<meta property="og:description" content="An LS-DYNA study of a compressor blade breaking off in flight. The data went toward FAA engine certification.">
+<meta property="og:image" content="https://www.jonathandigiorgio.com/assets/img/pw-2-405.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="../../favicon-32x32.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Schibsted+Grotesk:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../assets/site.css?v=20261124">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJ9CX0GBKX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZJ9CX0GBKX');</script>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="wordmark" href="../../">Jonathan Di Giorgio</a>
+    <nav class="nav" aria-label="Main">
+      <a href="../../#work">Work</a>
+      <a href="../../#projects" aria-current="page">Projects</a>
+      <a href="../../#about">About</a>
+      <a class="nav-cta" href="../../assets/docs/Jonathan_DiGiorgio_Resume.pdf" target="_blank" rel="noopener">Résumé <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="proj">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../#projects">← All projects</a><span>04 of 11</span></nav>
+    <header class="proj-head">
+      <p class="proj-kind">Internship · Pratt &amp; Whitney Canada · 2024</p>
+      <h1>Blade-off containment study</h1>
+      <p class="proj-lede">An LS-DYNA study showing that a compressor blade stays inside the engine case if it breaks off in flight.</p>
+    </header>
+    <div class="proj-facts">
+      <dl class="title-block compact"><div class="tb-cell"><dt>My role</dt><dd>Structural FEA intern</dd></div><div class="tb-cell"><dt>When</dt><dd>Jan to Apr 2024</dd></div><div class="tb-cell"><dt>Tools</dt><dd>LS-DYNA, LS-PrePost, Altair HyperMesh, CATIA V5, SpaceClaim</dd></div></dl>
+      <dl class="figures big"><div><dt>8</dt><dd>runs, each more detailed</dd></div><div><dt>FAA</dt><dd>certification data</dd></div><div><dt>42%</dt><dd>saving in a separate composite study</dd></div></dl>
+    </div>
+  </div>
+  <div class="wrap proj-hero"></div>
+  <div class="wrap proj-body">
+    <section class="psec"><h2>The question</h2><div class="psec-body"><p>If a compressor blade breaks off in flight, the engine case has to contain it. During my internship at Pratt &amp; Whitney Canada I ran a blade-off containment study on a compressor with new design changes, following FAA guidance and P&amp;W best practice.</p></div></section><section class="psec"><h2>How I ran it</h2><div class="psec-body"><p>I defeatured the compressor assembly in CATIA and SpaceClaim, meshed and prepped it in Altair HyperMesh, and applied the boundary conditions for the LS-DYNA solver. Then I worked through 8 runs of increasing complexity, each one closer to the real event. Getting the inputs meant working with several departments, and I wrote the study up in a formal report and presentation.</p><div class="figgrid c2 "><figure class="plate" style="--nat:320px"><a class="zoom" href="../../assets/img/pw-1-320.webp" data-caption="Blade released inside the case." aria-label="Open full size: LS-DYNA model of the containment case with the released blade inside"><img src="../../assets/img/pw-1-320.webp" srcset="../../assets/img/pw-1-320.webp 320w" sizes="(min-width: 1100px) 900px, 100vw" width="320" height="308" alt="LS-DYNA model of the containment case with the released blade inside" decoding="async" loading="lazy"></a><figcaption><span class="fig-n">FIG. 1</span> Blade released inside the case.</figcaption></figure><figure class="plate" style="--nat:405px"><a class="zoom" href="../../assets/img/pw-2-405.webp" data-caption="Stress on the case at impact." aria-label="Open full size: Stress contour on the case where the blade strikes it"><img src="../../assets/img/pw-2-405.webp" srcset="../../assets/img/pw-2-405.webp 405w" sizes="(min-width: 1100px) 900px, 100vw" width="405" height="393" alt="Stress contour on the case where the blade strikes it" decoding="async" loading="lazy"></a><figcaption><span class="fig-n">FIG. 2</span> Stress on the case at impact.</figcaption></figure></div></div></section><section class="psec"><h2>Result</h2><div class="psec-body"><p>The study confirmed the blade stays contained with the new design changes, and its data went toward FAA engine certification.</p></div></section><section class="psec"><h2>The rest of the term</h2><div class="psec-body"><ul class="ticks"><li>Led a study in ANSYS ACP on replacing an aluminum part with a composite, which showed a 42% weight saving.</li><li>Simulated hail and ice ingestion on a proposed composite bypass vane.</li><li>Flagged more than 10 designs that didn't meet FAA or company guidelines, and presented 3 technical reports.</li></ul></div></section>
+    
+  </div>
+  <nav class="wrap pager" aria-label="More projects">
+    <a href="../../projects/watdig-tbm/"><span>Previous</span>Tunnel boring machine</a>
+    <a href="../../projects/axon-v1/" class="next"><span>Next</span>Axon V1 differential wrist</a>
+  </nav>
+</main>
+<footer class="site-foot" id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-line">I'm looking for full-time robotics and mechanical design roles starting summer 2027.</p>
+        <a class="foot-mail" href="mailto:jonathan.digiorgio04@gmail.com">jonathan.digiorgio04@gmail.com</a>
+      </div>
+      <ul class="foot-links">
+        <li><a href="https://www.linkedin.com/in/j-digiorgio/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="../../assets/docs/Jonathan_DiGiorgio_Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></li>
+        <li><a href="https://github.com/jddigior" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+    <div class="foot-base"><span>© 2026 Jonathan Di Giorgio</span><a href="#top">Back to top ↑</a></div>
+  </div>
+</footer>
+<dialog class="lightbox" aria-label="Image viewer">
+  <button class="lb-close" type="button">Close</button>
+  <button class="lb-prev" type="button" aria-label="Previous image">←</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button class="lb-next" type="button" aria-label="Next image">→</button>
+</dialog>
+<script src="../../assets/site.js?v=20261124" defer></script>
+</body>
+</html>
