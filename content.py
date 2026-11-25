@@ -28,11 +28,16 @@ IMAGES = {
     "axon-wrist": {"src": "axon-v2_web_wrist-differential.webp", "widths": (800, 1500)},
     "axon-gripper": {"src": "axon-v2_web_end-effector.webp", "widths": (800, 1500)},
     "axon-iterations": {"src": "axon-v2_web_design-iterations.webp", "widths": (800, 1500)},
-    "axon-3kg": {"src": "axon-v2_web_3kg-weighed.webp", "crop": (0, .08, 1, .92), "widths": (700, 1200)},
     "axon-panels": {"src": "axon-v2_web_panels-removed.webp", "widths": (700, 1200)},
     "axon-reach": {"src": "axon-v2_web_range-of-motion.webp", "widths": (800, 1288)},
     "axon-folded": {"src": "axon-v2_web_folded-over.webp", "crop": (0, .1, 1, .9), "widths": (700, 1200)},
-    "axon-v1": {"src": "axon-v1_wrist.webp", "widths": (956,)},
+    "v1-exploded": {"src": "v1_exploded.webp", "crop": (.02, .02, .98, .98), "widths": (800, 1600)},
+    "v1-built": {"src": "v1_built.webp", "crop": (0, .06, 1, .94), "widths": (700, 1200)},
+    "v1-section": {"src": "v1_section.webp", "crop": (.03, .02, .97, .98), "widths": (700, 1200)},
+    "v1-electronics": {"src": "v1_electronics.webp", "crop": (0, .05, 1, .95), "widths": (700, 1200)},
+    "v1-internals": {"src": "v1_internals.webp", "widths": (603,)},
+    "v1-rig": {"src": "v1_rig.webp", "crop": (0, 0, 1, .82), "widths": (700, 1200)},
+    "v1-render": {"src": "v1_render.webp", "crop": (.3, 0, .7, 1), "widths": (432,)},
     "chess-cover": {"src": "orig_chessrobot.webp", "crop": (0, .12, 1, .87), "widths": (700, 1400)},
     "chess-setup": {"src": "chess-robot_1.webp", "widths": (908,)},
     "chess-cad": {"src": "chess-robot_3.webp", "widths": (768,)},
@@ -61,6 +66,9 @@ IMAGES = {
     "tbm-night": {"src": "watdig_tbm_2.webp", "widths": (807,)},
     "tbm-pit": {"src": "watdig_tbm_1.webp", "widths": (615,)},
     "tbm-site": {"src": "watdig_tbm_3.webp", "widths": (615,)},
+    "tbm-artic": {"src": "tbm_articulation.webp", "widths": (800, 1297)},
+    "tbm-cad": {"src": "tbm_cad_full.webp", "crop": (.08, .12, .92, .88), "widths": (800, 1134)},
+    "tbm-cad-head": {"src": "tbm_cad_head.webp", "widths": (800, 1350)},
 }
 
 # --------------------------------------------------------------------------- home
@@ -73,7 +81,7 @@ HERO_SUB = ("My last two internships were at Neuralink, where I built a robotic 
 TITLE_BLOCK = [
     ("School", "University of Waterloo, Mechanical Engineering, Mechatronics option"),
     ("Graduating", "April 2027, 96.0% average"),
-    ("Internships", "Neuralink (twice), Tesla, Pratt &amp; Whitney Canada, S&amp;C Electric"),
+    ("Internships", "Neuralink (2x), Tesla, Pratt &amp; Whitney Canada, S&amp;C Electric"),
     ("Looking for", "Full-time robotics and mechanical design roles from summer 2027"),
     ("Work status", "Canadian citizen, eligible for TN status in the US"),
 ]
@@ -196,10 +204,11 @@ BIO = [
 ]
 
 AWARDS = [
-    "First in Class Engineering Scholarship, 3 times",
+    "3x First in Class Engineering Scholarship",
     "President's Scholarship of Distinction",
-    "Dean's Honours List, 4 terms, and Term Distinction, 2 terms",
-    "President's International Experience Award, twice",
+    "4x Dean's Honours List",
+    "2x Term Distinction",
+    "2x President's International Experience Award",
 ]
 CERTS = [
     "Tesla Advanced GD&amp;T (Levels 1, 2 and Advanced)",
@@ -319,7 +328,7 @@ def axon_v2_body(fig, p):
         sec("Iterations", P("The arm went through three versions. Later ones added mechanical hard stops, two cooling fans in the base, and magnetic cover panels that come off for repairs and cable routing."),
             fig("axon-iterations", "Three versions of the arm side by side, labelled V1, V2 and V3", "The three versions, left to right.", n=2, fill=True)),
         sec("Testing", P("The shoulder lifted 3 kg, and the shoulder and elbow each held 1.5 kg at full reach. At 3 kg the wrist starts to flex. Gripping tests covered a billiard ball, a mouse, an egg and a pencil."),
-            grid(fig("axon-3kg", "Test weight reading 3009 grams on a kitchen scale", "The 3 kg test load.", n=3, fill=True),
+            grid(fig("axon-folded", "Axon V2 folded over with the gripper pointing down", "Folded over, with the gripper pointing down.", n=3, fill=True),
                  fig("axon-panels", "Axon V2 with its magnetic cover panels removed", "Cover panels off.", n=4, fill=True), cls="matched"),
             fig("axon-reach", "Top-down plot of the arm's reach, 172 mm inner radius and 675 mm outer radius", "Reachable workspace, 172 mm to 675 mm from the base axis.", n=5)),
         sec("Specifications", joints, cost),
@@ -329,12 +338,17 @@ def axon_v2_body(fig, p):
 def axon_v1_body(fig, p):
     return "".join([
         sec("What it is", P(
-            "A two-axis robotic wrist, built as the first piece of a 6-DOF arm. Two steppers drive a 3D-printed differential through timing belts, which also multiply the torque. An Arduino Uno running AccelStepper keeps both axes in sync using a synchronization routine I wrote, and you can drive it with an analog joystick or send serial commands for tuning.")),
+            "A two-axis robotic wrist, built as the first piece of a 6-DOF arm. Two steppers drive a 3D-printed differential through timing belts, which also multiply the torque. An Arduino Uno running AccelStepper keeps both axes in sync using a synchronization routine I wrote, and you can drive it with an analog joystick or send serial commands for tuning."),
+            grid(fig("v1-built", "The finished Axon V1 wrist with its white printed covers", "The finished wrist.", n=2, fill=True),
+                 fig("v1-section", "Section view of the wrist assembly showing the gears, bearings and belt drive", "Section view of the wrist assembly.", n=3, fill=True), cls="matched-tall")),
         sec("How I built it", UL(
             "Set constraints and criteria first, then sketched and researched the overall layout.",
             "Modelled it in Onshape for 3D printing, with off-the-shelf hardware where it made sense.",
             "Ran it open loop on TMC2208 drivers, with both steppers homing off a single limit switch.",
-            "Stress tested it on a rig I designed to find its limits, and wrote it all up in a 25-page report.")),
+            "Stress tested it on a rig I designed to find its limits, and wrote it all up in a 25-page report."),
+            grid(fig("v1-electronics", "Arduino Uno and two stepper drivers wired on a breadboard", "Arduino Uno and the two TMC2208 drivers.", n=4, fill=True),
+                 fig("v1-internals", "The wrist with its covers removed, showing the motor and frame", "Covers off.", n=5, fill=True),
+                 fig("v1-rig", "The wrist mounted on its stress test rig", "Stress testing on the rig I designed.", n=6, fill=True), cols=3, cls="matched-tall")),
         sec("What I learned", P(
             "It met every constraint I set, with about 1.3 Nm of output torque, smooth coordinated motion and close to zero backlash, for under $50. It also gave me a list for the next version, with closed-loop control, contactless homing and better wire routing at the top. Most of that went into Axon V2.")),
     ])
@@ -459,10 +473,14 @@ def watdig_body(fig, p):
         sec("The team", P(
             "WatDig is Waterloo's team for The Boring Company's Not-a-Boring Competition, where student teams build tunnel boring machines. I led a team of four on the chassis, propulsion and articulation (steering) systems for the 2025 machine.")),
         sec("Articulation system", P(
-            "The articulation joint is how the machine steers. I designed a motorized and hydraulic system based on a Stewart platform, with hydraulics for power and sensors for control, that steers against 3 kNm of torque. I worked out the steering force with hand calculations and FEA to set the hydraulic actuator specs, and modelled the system in Onshape.",
+            "The articulation joint is how the machine steers. I designed a motorized and hydraulic system based on a Stewart platform, with hydraulics for power and sensors for control, that steers against 3 kNm of torque. I worked out the steering force with hand calculations and FEA to set the hydraulic actuator specs, and modelled the system in Onshape."),
+            fig("tbm-artic", "CAD render of the articulation system, six hydraulic legs joining two hull sections", "The articulation system, a Stewart platform of hydraulic legs between two hull sections.", n=2, fill=True),
+            fig("tbm-cad-head", "Close-up CAD render of the front of the machine", "Front of the machine in CAD.", n=3, fill=True)),
+        sec("At the competition", P(
             "I also designed and made several of the structural parts. The machine competed at NaBC 2025 in Texas, and the team raised more than $10,000 in sponsorship along the way."),
-            grid(fig("tbm-pit", "Crew lowering the boring machine into the launch pit", "Lowering the machine into the launch pit.", n=2),
-                 fig("tbm-site", "Team members working on the machine at the competition site", "Work on site at the competition.", n=3))),
+            fig("tbm-night", "The WatDig tunnel boring machine being assembled under a tent at night", "Assembly at the competition site.", n=4),
+            grid(fig("tbm-pit", "Crew lowering the boring machine into the launch pit", "Lowering the machine into the launch pit.", n=5),
+                 fig("tbm-site", "Team members working on the machine at the competition site", "Work on site.", n=6))),
     ])
 
 
@@ -490,15 +508,15 @@ PROJECTS = [
         "slug": "axon-v2", "title": "Axon V2 robotic arm", "kind": "Personal project · 2026",
         "short": "A 6-DOF arm on custom cycloidal and planetary gearboxes. 3 kg payload and about 1 mm repeatability for under $300.",
         "fact": "3 kg payload, 690 mm reach, ~1 mm repeatability, $297 in parts",
-        "lede": "A six-axis arm built around gearboxes we designed and printed ourselves. It lifts 3 kg, reaches 690 mm and repeats to about 1 mm, and the parts cost $296.70.",
+        "lede": "A six-axis arm built around custom 3D-printed cycloidal and planetary gearboxes. It lifts 3 kg, reaches 690 mm and repeats to about 1 mm, and the parts cost $296.70.",
         "cover": "hero", "index_cover": "axon-folded", "cover_alt": "Axon V2 robot arm on a wooden ledge",
         "hero_caption": "Axon V2 on its weighted base plate.",
-        "meta": [("My role", "Mechanical and electrical design, co-designed with Ali Muizz"), ("When", "2026"),
+        "meta": [("My role", "Mechanical and electrical design"), ("When", "2026"),
                  ("Tools", "Onshape, 3D printing, NEMA 14, 17 and 23 steppers, TMC2209, servos")],
         "figures": [("3 kg", "max payload"), ("690 mm", "reach"), ("~1 mm", "repeatability"), ("$297", "in parts")],
         "body": axon_v2_body,
         "links": [("Live CAD in Onshape", "https://cad.onshape.com/documents/89cf0009362a9f4b36c676c7/w/fa1475b775bea1364fdb21dd/e/bf43eb84fbcd42c9c9dab1a0?renderMode=0&amp;uiState=6a7958dae6e9bfac068b8839"),
-                  ("Ali Muizz's write-up", "https://www.alimuizz.com/projects/6-dof-robot-arm")],
+                  ],
     },
     {
         "slug": "warg-drone", "title": "Drone hardware for WARG", "kind": "Design team · 2023 to 2024",
@@ -517,11 +535,11 @@ PROJECTS = [
         "short": "Led chassis, propulsion and a hydraulic steering system for The Boring Company's Not-a-Boring Competition.",
         "fact": "Steering against 3 kNm, competed at NaBC 2025 in Texas",
         "lede": "I led four people on the chassis, propulsion and steering of WatDig's tunnel boring machine, which competed at NaBC 2025.",
-        "cover": "tbm-night", "cover_alt": "The WatDig tunnel boring machine under a tent at night",
+        "cover": "tbm-cad", "index_cover": "tbm-artic", "cover_alt": "CAD render of the full WatDig tunnel boring machine",
         "meta": [("My role", "Mechanical Team Lead, Chassis &amp; Propulsion"), ("When", "May 2024 to 2025"),
                  ("Tools", "Onshape, hand calculations, FEA, hydraulics")],
         "figures": [("4", "people on my subteam"), ("3 kNm", "steering torque"), ("NaBC", "2025, Texas")],
-        "hero_caption": "Assembly at the competition site.",
+        "hero_caption": "CAD of the full machine.",
         "body": watdig_body,
     },
     {
@@ -541,8 +559,8 @@ PROJECTS = [
         "short": "A two-axis belt-driven differential wrist. 1.3 Nm, near-zero backlash, under $50.",
         "fact": "1.3 Nm output, close to zero backlash, under $50",
         "lede": "The two-axis wrist I built before the full arm, to learn differentials, stepper control and synchronized motion.",
-        "cover": "axon-v1", "cover_alt": "Axon V1 wrist housings, exploded view and test rig", "fit": "contain",
-        "hero_fill": False, "hero_caption": "Housings, the exploded assembly, and the wrist on its test rig.",
+        "cover": "v1-exploded", "cover_alt": "Exploded render of the Axon V1 wrist",
+        "hero_caption": "Exploded view of the wrist.",
         "meta": [("My role", "Solo design and build"), ("Tools", "Onshape, Arduino, AccelStepper, TMC2208")],
         "figures": [("1.3 Nm", "output torque"), ("~0", "backlash"), ("&lt; $50", "in parts"), ("25 pages", "design report")],
         "body": axon_v1_body,
