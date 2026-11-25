@@ -1,6 +1,6 @@
 """All site copy and image definitions. Facts come from ../Experience and ../Projects."""
 
-VERSION = "20261124c"
+VERSION = "20261124d"
 EMAIL = "jonathan.digiorgio04@gmail.com"
 LINKEDIN = "https://www.linkedin.com/in/j-digiorgio/"
 GITHUB = "https://github.com/jddigior"
@@ -102,8 +102,6 @@ BALLOONS = [
     {"x": 87.5, "y": 77, "label": "Fin-ray gripper", "spec": "Parallel four-bar, 70 mm", "href": "sub-5"},
 ]
 
-WORK_INTRO = ("Five internships since 2023. A lot of the Neuralink and Tesla work is under NDA, "
-              "so those entries stick to what I can share and have no photos.")
 
 ROLES = [
     {

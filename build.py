@@ -89,7 +89,7 @@ def plate(key, alt, caption="", n=None, prefix="", sizes="(min-width: 1100px) 90
 
 # --------------------------------------------------------------------------- layout
 
-FONTS = "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Schibsted+Grotesk:wght@400;500;600&display=swap"
+FONTS = "https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap"
 
 
 def head(title, desc, prefix, path, og_img):
@@ -135,7 +135,7 @@ def header(prefix, current=""):
       {nav(home + "#work", "Work", "work")}
       {nav(home + "#projects", "Projects", "projects")}
       {nav(home + "#about", "About", "about")}
-      <a class="nav-cta" href="{prefix}{C.RESUME}" target="_blank" rel="noopener">Resume <span aria-hidden="true">↗</span></a>
+      <a class="nav-cta" href="{prefix}{C.RESUME}" target="_blank" rel="noopener">Resume</a>
     </nav>
   </div>
 </header>
@@ -188,34 +188,36 @@ def build_home():
         f'<li><a href="projects/axon-v2/#{b["href"]}" data-b="{i}"><span class="bn">{i}</span><span class="bl">{b["label"]}</span><span class="bs">{b["spec"]}</span></a></li>'
         for i, b in enumerate(C.BALLOONS, 1)
     )
-    tb = "".join(f'<div class="tb-cell"><dt>{k}</dt><dd>{v}</dd></div>' for k, v in C.TITLE_BLOCK)
+    facts = "".join(f"<div><dt>{k}</dt><dd>{v}</dd></div>" for k, v in C.TITLE_BLOCK)
     out.append(f"""
 <section class="hero">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-text">
-        <h1>Jonathan Di Giorgio</h1>
-        <p class="pitch">{C.PITCH}</p>
-        <p class="hero-sub">{C.HERO_SUB}</p>
-        <div class="hero-links">
-          <a class="btn" href="{C.RESUME}" target="_blank" rel="noopener">Resume (PDF)</a>
-          <a class="btn ghost" href="mailto:{C.EMAIL}">Email me</a>
-          <a class="text-link" href="{C.LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
+  <div class="wrap hero-top">
+    <div class="hero-id">
+      <h1>Jonathan Di Giorgio</h1>
+      <p class="pitch">{C.PITCH}</p>
+    </div>
+    <div class="hero-aside">
+      <p class="hero-sub">{C.HERO_SUB}</p>
+      <div class="hero-links">
+        <a class="btn" href="{C.RESUME}" target="_blank" rel="noopener">Resume (PDF)</a>
+        <a class="btn ghost" href="mailto:{C.EMAIL}">Email me</a>
+        <a class="text-link" href="{C.LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a>
       </div>
-      <dl class="title-block" aria-label="Summary">{tb}</dl>
-    <figure class="hero-fig">
+    </div>
+  </div>
+  <figure class="hero-fig">
+    <div class="hero-row"><div class="wrap">
       <div class="hero-img">
         {img("hero", "Axon V2, a grey six-axis robot arm with a two-finger gripper, on a wooden ledge", sizes="(min-width: 1280px) 1200px, 100vw", eager=True)}
         {balloons}
       </div>
-      <figcaption class="hero-cap">
-        <div class="hero-cap-head"><span class="fig-n">FIG. 1</span> Axon V2, the 6-DOF arm I built. 3 kg payload, 690 mm reach, about 1 mm repeatability, $297 in parts. <a href="projects/axon-v2/">See how it's built</a></div>
-        <ol class="legend">{legend}</ol>
-      </figcaption>
-    </figure>
-    </div>
-  </div>
+    </div></div>
+    <figcaption class="hero-cap"><div class="wrap">
+      <p class="hero-cap-head">Axon V2, the 6-DOF arm I built. 3 kg payload, 690 mm reach, about 1 mm repeatability, $297 in parts. <a href="projects/axon-v2/">See how it's built</a></p>
+      <ol class="legend">{legend}</ol>
+    </div></figcaption>
+  </figure>
+  <div class="wrap"><dl class="facts" aria-label="Summary">{facts}</dl></div>
 </section>
 """)
 
@@ -231,16 +233,14 @@ def build_home():
             quote = f'<blockquote class="rec"><p>"{r["quote"][0]}"</p><cite>{r["quote"][1]}</cite></blockquote>'
         roles.append(f"""
       <article class="role">
-        <div class="role-co">
-          <h3>{r["company"]}</h3>
-          <p class="role-when">{r["dates"]}<br>{r["place"]}</p>
-        </div>
+        <p class="role-when"><b>{r["dates"]}</b>{r["place"]}</p>
         <div class="role-body">
+          <h3>{r["company"]}</h3>
           <p class="role-title">{r["title"]}</p>
           <p class="role-lead">{r["lead"]}</p>
           {figs}
           <details class="role-more">
-            <summary>What I did</summary>
+            <summary><span class="more">Show what I did</span><span class="less">Hide details</span></summary>
             <ul class="ticks">{pts}</ul>
             {quote}
             <p class="tools">{r["tools"]}</p>
@@ -259,7 +259,6 @@ def build_home():
   <div class="wrap">
     <header class="sec-head">
       <h2>Work</h2>
-      <p>{C.WORK_INTRO}</p>
     </header>
     <div class="roles">{"".join(roles)}
     </div>
@@ -278,17 +277,15 @@ def build_home():
         thumb = img(cover, "", sizes="96px", cls="row-thumb") if cover else '<span class="row-thumb ph"></span>'
         rows.append(f"""
         <li><a class="row" href="projects/{pr["slug"]}/" data-i="{i - 1}">
-          <span class="row-n">{i:02d}</span>
           {thumb}
           <span class="row-main"><span class="row-k">{pr["kind"]}</span><span class="row-t">{pr["title"]}</span><span class="row-d">{pr["short"]}</span></span>
-          <span class="row-go" aria-hidden="true">→</span>
         </a></li>""")
         if cover:
             pv = img(cover, pr["cover_alt"], sizes="(min-width: 1100px) 560px, 50vw")
         else:
             pv = C.COLLAR_SVG
         fitcls = " contain" if pr.get("fit") == "contain" else ""
-        previews.append(f'<figure class="pv{fitcls}{" on" if i == 1 else ""}" data-i="{i - 1}"><div class="pv-img">{pv}</div><figcaption><span class="fig-n">{i:02d}</span> {pr["fact"]}</figcaption></figure>')
+        previews.append(f'<figure class="pv{fitcls}{" on" if i == 1 else ""}" data-i="{i - 1}"><div class="pv-img">{pv}</div><figcaption>{pr["fact"]}</figcaption></figure>')
     out.append(f"""
 <section class="section" id="projects">
   <div class="wrap">
@@ -383,8 +380,6 @@ def build_project(i, pr):
 """)
     out.append(footer(p))
     page = "".join(out)
-    counter = iter(range(1, 1000))
-    page = re.sub(r'<span class="fig-n">FIG\. \d+</span>', lambda m: f'<span class="fig-n">FIG. {next(counter)}</span>', page)
     write(f"projects/{slug}/index.html", page)
 
 
@@ -401,6 +396,8 @@ def build_404():
 
 
 def write(rel, text):
+    # Figure numbers ("FIG. 3") read as template chrome on a portfolio; captions stand on their own.
+    text = re.sub(r'<span class="fig-n">[^<]*</span>\s*', "", text)
     path = os.path.join(ROOT, rel)
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8", newline="\n") as f:

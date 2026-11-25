@@ -18,8 +18,8 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Schibsted+Grotesk:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=20261124c">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+<link rel="stylesheet" href="assets/site.css?v=20261124d">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJ9CX0GBKX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZJ9CX0GBKX');</script>
 </head>
@@ -32,57 +32,56 @@
       <a href="./#work">Work</a>
       <a href="./#projects">Projects</a>
       <a href="./#about">About</a>
-      <a class="nav-cta" href="assets/docs/Jonathan_DiGiorgio_Resume.pdf" target="_blank" rel="noopener">Resume <span aria-hidden="true">↗</span></a>
+      <a class="nav-cta" href="assets/docs/Jonathan_DiGiorgio_Resume.pdf" target="_blank" rel="noopener">Resume</a>
     </nav>
   </div>
 </header>
 <main id="main">
 <section class="hero">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-text">
-        <h1>Jonathan Di Giorgio</h1>
-        <p class="pitch">I design robots and the machines that build and test hardware.</p>
-        <p class="hero-sub">My last two internships were at Neuralink, where I built a robotic cell that makes surgical needles and a fleet of lifetime testers for brain implants. Before that I designed stamped and die-cast parts for Cybertruck and Robotaxi at Tesla.</p>
-        <div class="hero-links">
-          <a class="btn" href="assets/docs/Jonathan_DiGiorgio_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
-          <a class="btn ghost" href="mailto:jonathan.digiorgio04@gmail.com">Email me</a>
-          <a class="text-link" href="https://www.linkedin.com/in/j-digiorgio/" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
+  <div class="wrap hero-top">
+    <div class="hero-id">
+      <h1>Jonathan Di Giorgio</h1>
+      <p class="pitch">I design robots and the machines that build and test hardware.</p>
+    </div>
+    <div class="hero-aside">
+      <p class="hero-sub">My last two internships were at Neuralink, where I built a robotic cell that makes surgical needles and a fleet of lifetime testers for brain implants. Before that I designed stamped and die-cast parts for Cybertruck and Robotaxi at Tesla.</p>
+      <div class="hero-links">
+        <a class="btn" href="assets/docs/Jonathan_DiGiorgio_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+        <a class="btn ghost" href="mailto:jonathan.digiorgio04@gmail.com">Email me</a>
+        <a class="text-link" href="https://www.linkedin.com/in/j-digiorgio/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
-      <dl class="title-block" aria-label="Summary"><div class="tb-cell"><dt>School</dt><dd>University of Waterloo, Mechanical Engineering, Mechatronics option</dd></div><div class="tb-cell"><dt>Graduating</dt><dd>April 2027, 96.0% average</dd></div><div class="tb-cell"><dt>Internships</dt><dd>Neuralink (2x), Tesla, Pratt &amp; Whitney Canada, S&amp;C Electric</dd></div><div class="tb-cell"><dt>Looking for</dt><dd>Full-time robotics and mechanical design roles from summer 2027</dd></div><div class="tb-cell"><dt>Work status</dt><dd>Canadian citizen, eligible for TN status in the US</dd></div></dl>
-    <figure class="hero-fig">
+    </div>
+  </div>
+  <figure class="hero-fig">
+    <div class="hero-row"><div class="wrap">
       <div class="hero-img">
         <img src="assets/img/hero-1100.webp" srcset="assets/img/hero-700.webp 700w, assets/img/hero-1100.webp 1100w, assets/img/hero-1377.webp 1377w" sizes="(min-width: 1280px) 1200px, 100vw" width="1377" height="775" alt="Axon V2, a grey six-axis robot arm with a two-finger gripper, on a wooden ledge" decoding="async" fetchpriority="high">
         <a class="balloon" href="projects/axon-v2/#sub-1" style="--x:27%;--y:83%" data-b="1" aria-label="1. Rotating base"><span>1</span></a><a class="balloon" href="projects/axon-v2/#sub-2" style="--x:41%;--y:30%" data-b="2" aria-label="2. Shoulder cycloidal gearbox"><span>2</span></a><a class="balloon" href="projects/axon-v2/#sub-2" style="--x:66.8%;--y:14.8%" data-b="3" aria-label="3. Elbow cycloidal gearbox"><span>3</span></a><a class="balloon" href="projects/axon-v2/#sub-3" style="--x:74.5%;--y:25%" data-b="4" aria-label="4. Planetary elbow roll"><span>4</span></a><a class="balloon" href="projects/axon-v2/#sub-4" style="--x:84.5%;--y:50%" data-b="5" aria-label="5. Differential wrist"><span>5</span></a><a class="balloon" href="projects/axon-v2/#sub-5" style="--x:87.5%;--y:77%" data-b="6" aria-label="6. Fin-ray gripper"><span>6</span></a>
       </div>
-      <figcaption class="hero-cap">
-        <div class="hero-cap-head"><span class="fig-n">FIG. 1</span> Axon V2, the 6-DOF arm I built. 3 kg payload, 690 mm reach, about 1 mm repeatability, $297 in parts. <a href="projects/axon-v2/">See how it's built</a></div>
-        <ol class="legend"><li><a href="projects/axon-v2/#sub-1" data-b="1"><span class="bn">1</span><span class="bl">Rotating base</span><span class="bs">5:1 belt drive, holds the electronics</span></a></li><li><a href="projects/axon-v2/#sub-2" data-b="2"><span class="bn">2</span><span class="bl">Shoulder cycloidal gearbox</span><span class="bs">58.5:1, 30 Nm</span></a></li><li><a href="projects/axon-v2/#sub-2" data-b="3"><span class="bn">3</span><span class="bl">Elbow cycloidal gearbox</span><span class="bs">52:1, 8.3 Nm</span></a></li><li><a href="projects/axon-v2/#sub-3" data-b="4"><span class="bn">4</span><span class="bl">Planetary elbow roll</span><span class="bs">4:1, the sixth axis</span></a></li><li><a href="projects/axon-v2/#sub-4" data-b="5"><span class="bn">5</span><span class="bl">Differential wrist</span><span class="bs">Bevel gears, pitch and roll</span></a></li><li><a href="projects/axon-v2/#sub-5" data-b="6"><span class="bn">6</span><span class="bl">Fin-ray gripper</span><span class="bs">Parallel four-bar, 70 mm</span></a></li></ol>
-      </figcaption>
-    </figure>
-    </div>
-  </div>
+    </div></div>
+    <figcaption class="hero-cap"><div class="wrap">
+      <p class="hero-cap-head">Axon V2, the 6-DOF arm I built. 3 kg payload, 690 mm reach, about 1 mm repeatability, $297 in parts. <a href="projects/axon-v2/">See how it's built</a></p>
+      <ol class="legend"><li><a href="projects/axon-v2/#sub-1" data-b="1"><span class="bn">1</span><span class="bl">Rotating base</span><span class="bs">5:1 belt drive, holds the electronics</span></a></li><li><a href="projects/axon-v2/#sub-2" data-b="2"><span class="bn">2</span><span class="bl">Shoulder cycloidal gearbox</span><span class="bs">58.5:1, 30 Nm</span></a></li><li><a href="projects/axon-v2/#sub-2" data-b="3"><span class="bn">3</span><span class="bl">Elbow cycloidal gearbox</span><span class="bs">52:1, 8.3 Nm</span></a></li><li><a href="projects/axon-v2/#sub-3" data-b="4"><span class="bn">4</span><span class="bl">Planetary elbow roll</span><span class="bs">4:1, the sixth axis</span></a></li><li><a href="projects/axon-v2/#sub-4" data-b="5"><span class="bn">5</span><span class="bl">Differential wrist</span><span class="bs">Bevel gears, pitch and roll</span></a></li><li><a href="projects/axon-v2/#sub-5" data-b="6"><span class="bn">6</span><span class="bl">Fin-ray gripper</span><span class="bs">Parallel four-bar, 70 mm</span></a></li></ol>
+    </div></figcaption>
+  </figure>
+  <div class="wrap"><dl class="facts" aria-label="Summary"><div><dt>School</dt><dd>University of Waterloo, Mechanical Engineering, Mechatronics option</dd></div><div><dt>Graduating</dt><dd>April 2027, 96.0% average</dd></div><div><dt>Internships</dt><dd>Neuralink (2x), Tesla, Pratt &amp; Whitney Canada, S&amp;C Electric</dd></div><div><dt>Looking for</dt><dd>Full-time robotics and mechanical design roles from summer 2027</dd></div><div><dt>Work status</dt><dd>Canadian citizen, eligible for TN status in the US</dd></div></dl></div>
 </section>
 
 <section class="section" id="work">
   <div class="wrap">
     <header class="sec-head">
       <h2>Work</h2>
-      <p>Five internships since 2023. A lot of the Neuralink and Tesla work is under NDA, so those entries stick to what I can share and have no photos.</p>
     </header>
     <div class="roles">
       <article class="role">
-        <div class="role-co">
-          <h3>Neuralink</h3>
-          <p class="role-when">May to Nov 2026<br>South San Francisco, CA</p>
-        </div>
+        <p class="role-when"><b>May to Nov 2026</b>South San Francisco, CA</p>
         <div class="role-body">
+          <h3>Neuralink</h3>
           <p class="role-title">Mechanical Engineering Intern, Robotics</p>
           <p class="role-lead">I designed, built and validated a robotic cell that laser-mills, cleans and inspects microscopic surgical needles on its own. Before it, loading, moving parts between stations and cleaning were done by hand, and the line made about 100 needles a month.</p>
           <dl class="figures"><div><dt>25x</dt><dd>capacity, to 2,500 needles a month</dd></div><div><dt>99%+</dt><dd>yield in validation</dd></div><div><dt>8 min</dt><dd>cycle per needle</dd></div><div><dt>8 to 12 h</dt><dd>unattended overnight runs</dd></div></dl>
           <details class="role-more">
-            <summary>What I did</summary>
+            <summary><span class="more">Show what I did</span><span class="less">Hide details</span></summary>
             <ul class="ticks"><li>Owned all of the mechanical and electrical design, then built and wired the cell myself.</li><li>Designed the femtosecond laser milling fixture for sub-micron needle positioning, plus the custom gripper fingers and transfer mechanisms that handle the needle cartridges.</li><li>Worked on the Python sequencer that runs a UR arm, a hexapod and stepper axes, with error recovery, an operator GUI and per-needle logging.</li><li>Took more than 50 machined, turned, 3D-printed and injection-molded parts through overseas vendors with GD&amp;T drawings and DFM reviews.</li><li>Designed the laser-safe enclosure, with an interlock, a lock and a safety shutter.</li><li>The cell saves about 20 to 40 technician hours a week. When my term ended it was validated and waiting for production release.</li></ul>
             
             <p class="tools"><span>Tools</span> SOLIDWORKS, GD&amp;T, DFM, Python, URScript, RTDE, ACS motion control</p>
@@ -91,16 +90,14 @@
         </div>
       </article>
       <article class="role">
-        <div class="role-co">
-          <h3>Neuralink</h3>
-          <p class="role-when">May to Dec 2025<br>Fremont, CA</p>
-        </div>
+        <p class="role-when"><b>May to Dec 2025</b>Fremont, CA</p>
         <div class="role-body">
+          <h3>Neuralink</h3>
           <p class="role-title">Mechanical Engineering Intern, Brain Interfaces</p>
           <p class="role-lead">I designed and scaled an accelerated lifetime tester for neural implants. By the end of the term 10 to 20 of them were running, and their data went into an FDA submission.</p>
           <dl class="figures"><div><dt>4 months</dt><dd>cut from implant design iteration</dd></div><div><dt>5 to 10x</dt><dd>accelerated aging</dd></div><div><dt>0.1%</dt><dd>fluid chemistry and temperature control</dd></div><div><dt>10 to 20</dt><dd>testers running</dd></div></dl>
           <details class="role-more">
-            <summary>What I did</summary>
+            <summary><span class="more">Show what I did</span><span class="less">Hide details</span></summary>
             <ul class="ticks"><li>Designed a cyclic-tension fatigue tester for neural threads and built it into the lifetime tester.</li><li>Owned the closed-loop fluid system that feeds a neural proxy solution to more than 10 testers and holds its pH, conductivity and temperature within 0.1% of target.</li><li>Designed four revisions of PCBAs in KiCad for motor control and sensing (load, displacement, temperature, flow, pH, conductivity and level), and wrote the ESP32 firmware in C++ on FreeRTOS with a Python data pipeline.</li><li>Owned more than 30 parts and assemblies from concept through validation, and ran strength and durability studies on 10 implant components in COMSOL.</li><li>Led a rework of the tester UI that cut setup time by an hour per sample.</li></ul>
             
             <p class="tools"><span>Tools</span> SOLIDWORKS, DFMA, GD&amp;T, KiCad, ESP32, C++, FreeRTOS, I2C, Python, COMSOL</p>
@@ -109,16 +106,14 @@
         </div>
       </article>
       <article class="role">
-        <div class="role-co">
-          <h3>Tesla</h3>
-          <p class="role-when">Aug to Dec 2024<br>Fremont, CA</p>
-        </div>
+        <p class="role-when"><b>Aug to Dec 2024</b>Fremont, CA</p>
         <div class="role-body">
+          <h3>Tesla</h3>
           <p class="role-title">Mechanical Design Engineering Intern, Body Structure Repair</p>
           <p class="role-lead">I designed stamped and high-pressure die-cast service parts for Cybertruck and Robotaxi. They let a technician repair one section instead of replacing a large assembly, and across the fleet they're projected to save customers $10M a year. Everything I worked on was released.</p>
           <dl class="figures"><div><dt>$10M</dt><dd>projected yearly savings for customers</dd></div><div><dt>10</dt><dd>GD&amp;T drawings released</dd></div><div><dt>10%</dt><dd>faster fender bracket install</dd></div><div><dt>4</dt><dd>Model Y repair procedures</dd></div></dl>
           <details class="role-more">
-            <summary>What I did</summary>
+            <summary><span class="more">Show what I did</span><span class="less">Hide details</span></summary>
             <ul class="ticks"><li>Modelled each part in CATIA and worked through tolerance stack-ups, GD&amp;T and formability with the suppliers.</li><li>Designed an adjustable Cybertruck fender bracket that cut install time by 10% and closed up large panel gaps.</li><li>Used CAE crash results to refine 5 structural designs against FMVSS, and checked designs with 3D-printed test parts.</li><li>Wrote 4 Model Y structural repair procedures and the fastening strategy that goes with them.</li><li>Earned Tesla's Advanced GD&amp;T certification.</li></ul>
             <blockquote class="rec"><p>"He managed to consistently complete assigned tasks, demonstrating exceptional quality and speed of execution, handled multiple time critical tasks, and proactively supported other team members in meeting their targets."</p><cite>Karol Sobczak, my manager at Tesla</cite></blockquote>
             <p class="tools"><span>Tools</span> CATIA V5, 3DEXPERIENCE, GD&amp;T, tolerance stack-ups, stamping, HPDC, DFM</p>
@@ -127,16 +122,14 @@
         </div>
       </article>
       <article class="role">
-        <div class="role-co">
-          <h3>Pratt &amp; Whitney Canada</h3>
-          <p class="role-when">Jan to Apr 2024<br>Mississauga, ON</p>
-        </div>
+        <p class="role-when"><b>Jan to Apr 2024</b>Mississauga, ON</p>
         <div class="role-body">
+          <h3>Pratt &amp; Whitney Canada</h3>
           <p class="role-title">Mechanical Engineering Intern, Structural FEA</p>
           <p class="role-lead">I ran FEA on jet engine subassemblies and changed the CAD based on the results. My blade-off containment study produced data for FAA engine certification, and a composite study I led showed a 42% weight saving.</p>
           <dl class="figures"><div><dt>42%</dt><dd>weight saving in a composite study</dd></div><div><dt>8</dt><dd>LS-DYNA containment runs</dd></div><div><dt>10+</dt><dd>designs flagged against FAA and P&amp;W rules</dd></div><div><dt>3</dt><dd>technical reports presented</dd></div></dl>
           <details class="role-more">
-            <summary>What I did</summary>
+            <summary><span class="more">Show what I did</span><span class="less">Hide details</span></summary>
             <ul class="ticks"><li>Ran FEA in the ANSYS suite, LS-DYNA and Altair HyperWorks, and updated geometry in CATIA and SpaceClaim from the results.</li><li>Led a study in ANSYS ACP on replacing an aluminum part with a composite.</li><li>Simulated hail and ice ingestion on a proposed composite bypass vane.</li></ul>
             
             <p class="tools"><span>Tools</span> ANSYS Workbench, ACP, LS-DYNA, HyperMesh, CATIA V5, SpaceClaim, Enovia VPM</p>
@@ -145,16 +138,14 @@
         </div>
       </article>
       <article class="role">
-        <div class="role-co">
-          <h3>S&amp;C Electric Canada</h3>
-          <p class="role-when">May to Aug 2023<br>Etobicoke, ON</p>
-        </div>
+        <p class="role-when"><b>May to Aug 2023</b>Etobicoke, ON</p>
         <div class="role-body">
+          <h3>S&amp;C Electric Canada</h3>
           <p class="role-title">Quality Assurance Engineering Intern</p>
           <p class="role-lead">My first internship. I inspected high-voltage interrupter switches against GD&amp;T drawings and wrote a Python tool that automated inspection data and photo collection. The whole department adopted it.</p>
           <dl class="figures"><div><dt>43%</dt><dd>faster inspections</dd></div><div><dt>0</dt><dd>defective returns</dd></div></dl>
           <details class="role-more">
-            <summary>What I did</summary>
+            <summary><span class="more">Show what I did</span><span class="less">Hide details</span></summary>
             <ul class="ticks"><li>Ran more than 30 gauge R&amp;Rs, audits, hipot tests and hardness tests a week.</li><li>Led a package inspection project that uses Dori AI to catch parts missing from orders.</li><li>Assembled switches and subassemblies, which taught me a lot about DFMA from the shop floor.</li></ul>
             
             <p class="tools"><span>Tools</span> Python, GD&amp;T inspection, gauge R&amp;R, hipot and hardness testing</p>
@@ -179,67 +170,47 @@
     <div class="index">
       <ol class="rows">
         <li><a class="row" href="projects/axon-v2/" data-i="0">
-          <span class="row-n">01</span>
           <img src="assets/img/axon-folded-1200.webp" srcset="assets/img/axon-folded-700.webp 700w, assets/img/axon-folded-1200.webp 1200w" sizes="96px" width="1500" height="1200" alt="" decoding="async" loading="lazy" class="row-thumb">
           <span class="row-main"><span class="row-k">Personal project · 2026</span><span class="row-t">Axon V2 robotic arm</span><span class="row-d">A 6-DOF arm on custom cycloidal and planetary gearboxes. 3 kg payload and about 1 mm repeatability for under $300.</span></span>
-          <span class="row-go" aria-hidden="true">→</span>
         </a></li>
         <li><a class="row" href="projects/warg-drone/" data-i="1">
-          <span class="row-n">02</span>
           <img src="assets/img/warg-gear-drone-1483.webp" srcset="assets/img/warg-gear-drone-800.webp 800w, assets/img/warg-gear-drone-1483.webp 1483w" sizes="96px" width="1483" height="801" alt="" decoding="async" loading="lazy" class="row-thumb">
           <span class="row-main"><span class="row-k">Design team · 2023 to 2024</span><span class="row-t">Drone hardware for WARG</span><span class="row-d">Arm clamps, carbon fibre landing gear and a power board housing. All three flew at AEAC.</span></span>
-          <span class="row-go" aria-hidden="true">→</span>
         </a></li>
         <li><a class="row" href="projects/watdig-tbm/" data-i="2">
-          <span class="row-n">03</span>
           <img src="assets/img/tbm-artic-1297.webp" srcset="assets/img/tbm-artic-800.webp 800w, assets/img/tbm-artic-1297.webp 1297w" sizes="96px" width="1297" height="1080" alt="" decoding="async" loading="lazy" class="row-thumb">
           <span class="row-main"><span class="row-k">Design team · 2024 to 2025</span><span class="row-t">Tunnel boring machine</span><span class="row-d">Led chassis, propulsion and a hydraulic steering system for The Boring Company's Not-a-Boring Competition.</span></span>
-          <span class="row-go" aria-hidden="true">→</span>
         </a></li>
         <li><a class="row" href="projects/blade-off-containment/" data-i="3">
-          <span class="row-n">04</span>
           <img src="assets/img/pw-2-405.webp" srcset="assets/img/pw-2-405.webp 405w" sizes="96px" width="405" height="393" alt="" decoding="async" loading="lazy" class="row-thumb">
           <span class="row-main"><span class="row-k">Internship · Pratt &amp; Whitney Canada · 2024</span><span class="row-t">Blade-off containment study</span><span class="row-d">An LS-DYNA study of a compressor blade breaking off in flight. The data went toward FAA engine certification.</span></span>
-          <span class="row-go" aria-hidden="true">→</span>
         </a></li>
         <li><a class="row" href="projects/axon-v1/" data-i="4">
-          <span class="row-n">05</span>
           <img src="assets/img/v1-exploded-1600.webp" srcset="assets/img/v1-exploded-800.webp 800w, assets/img/v1-exploded-1600.webp 1600w" sizes="96px" width="2304" height="1780" alt="" decoding="async" loading="lazy" class="row-thumb">
           <span class="row-main"><span class="row-k">Personal project</span><span class="row-t">Axon V1 differential wrist</span><span class="row-d">A two-axis belt-driven differential wrist. 1.3 Nm, near-zero backlash, under $50.</span></span>
-          <span class="row-go" aria-hidden="true">→</span>
         </a></li>
         <li><a class="row" href="projects/chess-robot/" data-i="5">
-          <span class="row-n">06</span>
           <img src="assets/img/chess-cover-1400.webp" srcset="assets/img/chess-cover-700.webp 700w, assets/img/chess-cover-1400.webp 1400w" sizes="96px" width="2400" height="1800" alt="" decoding="async" loading="lazy" class="row-thumb">
           <span class="row-main"><span class="row-k">Course project · 2023</span><span class="row-t">Autonomous chess robot</span><span class="row-d">Computer vision, Stockfish and a 3-axis gantry. It never lost a game.</span></span>
-          <span class="row-go" aria-hidden="true">→</span>
         </a></li>
         <li><a class="row" href="projects/cycloidal-drive/" data-i="6">
-          <span class="row-n">07</span>
           <img src="assets/img/cyclo-run-363.webp" srcset="assets/img/cyclo-run-363.webp 363w" sizes="96px" width="363" height="355" alt="" decoding="async" loading="lazy" class="row-thumb">
           <span class="row-main"><span class="row-k">Personal project</span><span class="row-t">Cycloidal drive study</span><span class="row-d">A fully printed 9:1 cycloidal reducer with no bearings, built to learn the mechanism.</span></span>
-          <span class="row-go" aria-hidden="true">→</span>
         </a></li>
         <li><a class="row" href="projects/light-switch/" data-i="7">
-          <span class="row-n">08</span>
           <img src="assets/img/light-cover-1400.webp" srcset="assets/img/light-cover-700.webp 700w, assets/img/light-cover-1400.webp 1400w" sizes="96px" width="2208" height="1512" alt="" decoding="async" loading="lazy" class="row-thumb">
           <span class="row-main"><span class="row-k">Personal project</span><span class="row-t">Remote light switch</span><span class="row-d">An IR-controlled servo that flips a wall switch. 99% success and a 3-day battery.</span></span>
-          <span class="row-go" aria-hidden="true">→</span>
         </a></li>
         <li><a class="row" href="projects/vehicle-dynamics/" data-i="8">
-          <span class="row-n">09</span>
           <img src="assets/img/vd-path-418.webp" srcset="assets/img/vd-path-418.webp 418w" sizes="96px" width="418" height="339" alt="" decoding="async" loading="lazy" class="row-thumb">
           <span class="row-main"><span class="row-k">Course project · ME 303</span><span class="row-t">Vehicle dynamics in MATLAB</span><span class="row-d">A bicycle-model simulator solved with RK4. Graded 100% and used as a class example.</span></span>
-          <span class="row-go" aria-hidden="true">→</span>
         </a></li>
         <li><a class="row" href="projects/vent-flap/" data-i="9">
-          <span class="row-n">10</span>
           <img src="assets/img/vent-cover-1400.webp" srcset="assets/img/vent-cover-700.webp 700w, assets/img/vent-cover-1400.webp 1400w" sizes="96px" width="2400" height="1800" alt="" decoding="async" loading="lazy" class="row-thumb">
           <span class="row-main"><span class="row-k">Personal project</span><span class="row-t">Vent flap replacement</span><span class="row-d">Reverse-engineered replacement vent flaps. 30 other people have printed the model.</span></span>
-          <span class="row-go" aria-hidden="true">→</span>
         </a></li>
       </ol>
-      <div class="preview" aria-hidden="true"><figure class="pv on" data-i="0"><div class="pv-img"><img src="assets/img/axon-folded-1200.webp" srcset="assets/img/axon-folded-700.webp 700w, assets/img/axon-folded-1200.webp 1200w" sizes="(min-width: 1100px) 560px, 50vw" width="1500" height="1200" alt="Axon V2 robot arm on a wooden ledge" decoding="async" loading="lazy"></div><figcaption><span class="fig-n">01</span> 3 kg payload, 690 mm reach, ~1 mm repeatability, $297 in parts</figcaption></figure><figure class="pv contain" data-i="1"><div class="pv-img"><img src="assets/img/warg-gear-drone-1483.webp" srcset="assets/img/warg-gear-drone-800.webp 800w, assets/img/warg-gear-drone-1483.webp 1483w" sizes="(min-width: 1100px) 560px, 50vw" width="1483" height="801" alt="Render of the WARG drone on its carbon fibre landing gear" decoding="async" loading="lazy"></div><figcaption><span class="fig-n">02</span> Arm play down 56%, landing gear 300 g with a 130° landing angle</figcaption></figure><figure class="pv" data-i="2"><div class="pv-img"><img src="assets/img/tbm-artic-1297.webp" srcset="assets/img/tbm-artic-800.webp 800w, assets/img/tbm-artic-1297.webp 1297w" sizes="(min-width: 1100px) 560px, 50vw" width="1297" height="1080" alt="CAD render of the full WatDig tunnel boring machine" decoding="async" loading="lazy"></div><figcaption><span class="fig-n">03</span> Steering against 3 kNm, competed at NaBC 2025 in Texas</figcaption></figure><figure class="pv contain" data-i="3"><div class="pv-img"><img src="assets/img/pw-2-405.webp" srcset="assets/img/pw-2-405.webp 405w" sizes="(min-width: 1100px) 560px, 50vw" width="405" height="393" alt="Stress contour on a jet engine containment case at blade impact" decoding="async" loading="lazy"></div><figcaption><span class="fig-n">04</span> 8 LS-DYNA runs, data used for FAA engine certification</figcaption></figure><figure class="pv" data-i="4"><div class="pv-img"><img src="assets/img/v1-exploded-1600.webp" srcset="assets/img/v1-exploded-800.webp 800w, assets/img/v1-exploded-1600.webp 1600w" sizes="(min-width: 1100px) 560px, 50vw" width="2304" height="1780" alt="Exploded render of the Axon V1 wrist" decoding="async" loading="lazy"></div><figcaption><span class="fig-n">05</span> 1.3 Nm output, close to zero backlash, under $50</figcaption></figure><figure class="pv" data-i="5"><div class="pv-img"><img src="assets/img/chess-cover-1400.webp" srcset="assets/img/chess-cover-700.webp 700w, assets/img/chess-cover-1400.webp 1400w" sizes="(min-width: 1100px) 560px, 50vw" width="2400" height="1800" alt="The chess robot&#x27;s gantry over a board mid-game" decoding="async" loading="lazy"></div><figcaption><span class="fig-n">06</span> Over 95% move success, never lost a game</figcaption></figure><figure class="pv contain" data-i="6"><div class="pv-img"><img src="assets/img/cyclo-run-363.webp" srcset="assets/img/cyclo-run-363.webp 363w" sizes="(min-width: 1100px) 560px, 50vw" width="363" height="355" alt="Printed cycloidal drive wired to an Arduino on a breadboard" decoding="async" loading="lazy"></div><figcaption><span class="fig-n">07</span> 9:1 reduction, fully 3D printed</figcaption></figure><figure class="pv" data-i="7"><div class="pv-img"><img src="assets/img/light-cover-1400.webp" srcset="assets/img/light-cover-700.webp 700w, assets/img/light-cover-1400.webp 1400w" sizes="(min-width: 1100px) 560px, 50vw" width="2208" height="1512" alt="Bench prototype with the microcontroller wired to the switch unit" decoding="async" loading="lazy"></div><figcaption><span class="fig-n">08</span> 99% flip success, 3-day battery, no permanent changes</figcaption></figure><figure class="pv contain" data-i="8"><div class="pv-img"><img src="assets/img/vd-path-418.webp" srcset="assets/img/vd-path-418.webp 418w" sizes="(min-width: 1100px) 560px, 50vw" width="418" height="339" alt="Plot of a vehicle&#x27;s path in an oversteer case" decoding="async" loading="lazy"></div><figcaption><span class="fig-n">09</span> Graded 100%, used as a class example</figcaption></figure><figure class="pv" data-i="9"><div class="pv-img"><img src="assets/img/vent-cover-1400.webp" srcset="assets/img/vent-cover-700.webp 700w, assets/img/vent-cover-1400.webp 1400w" sizes="(min-width: 1100px) 560px, 50vw" width="2400" height="1800" alt="Printed white vent flaps installed on a brick wall" decoding="async" loading="lazy"></div><figcaption><span class="fig-n">10</span> Saved $40, printed by 30 other people</figcaption></figure></div>
+      <div class="preview" aria-hidden="true"><figure class="pv on" data-i="0"><div class="pv-img"><img src="assets/img/axon-folded-1200.webp" srcset="assets/img/axon-folded-700.webp 700w, assets/img/axon-folded-1200.webp 1200w" sizes="(min-width: 1100px) 560px, 50vw" width="1500" height="1200" alt="Axon V2 robot arm on a wooden ledge" decoding="async" loading="lazy"></div><figcaption>3 kg payload, 690 mm reach, ~1 mm repeatability, $297 in parts</figcaption></figure><figure class="pv contain" data-i="1"><div class="pv-img"><img src="assets/img/warg-gear-drone-1483.webp" srcset="assets/img/warg-gear-drone-800.webp 800w, assets/img/warg-gear-drone-1483.webp 1483w" sizes="(min-width: 1100px) 560px, 50vw" width="1483" height="801" alt="Render of the WARG drone on its carbon fibre landing gear" decoding="async" loading="lazy"></div><figcaption>Arm play down 56%, landing gear 300 g with a 130° landing angle</figcaption></figure><figure class="pv" data-i="2"><div class="pv-img"><img src="assets/img/tbm-artic-1297.webp" srcset="assets/img/tbm-artic-800.webp 800w, assets/img/tbm-artic-1297.webp 1297w" sizes="(min-width: 1100px) 560px, 50vw" width="1297" height="1080" alt="CAD render of the full WatDig tunnel boring machine" decoding="async" loading="lazy"></div><figcaption>Steering against 3 kNm, competed at NaBC 2025 in Texas</figcaption></figure><figure class="pv contain" data-i="3"><div class="pv-img"><img src="assets/img/pw-2-405.webp" srcset="assets/img/pw-2-405.webp 405w" sizes="(min-width: 1100px) 560px, 50vw" width="405" height="393" alt="Stress contour on a jet engine containment case at blade impact" decoding="async" loading="lazy"></div><figcaption>8 LS-DYNA runs, data used for FAA engine certification</figcaption></figure><figure class="pv" data-i="4"><div class="pv-img"><img src="assets/img/v1-exploded-1600.webp" srcset="assets/img/v1-exploded-800.webp 800w, assets/img/v1-exploded-1600.webp 1600w" sizes="(min-width: 1100px) 560px, 50vw" width="2304" height="1780" alt="Exploded render of the Axon V1 wrist" decoding="async" loading="lazy"></div><figcaption>1.3 Nm output, close to zero backlash, under $50</figcaption></figure><figure class="pv" data-i="5"><div class="pv-img"><img src="assets/img/chess-cover-1400.webp" srcset="assets/img/chess-cover-700.webp 700w, assets/img/chess-cover-1400.webp 1400w" sizes="(min-width: 1100px) 560px, 50vw" width="2400" height="1800" alt="The chess robot&#x27;s gantry over a board mid-game" decoding="async" loading="lazy"></div><figcaption>Over 95% move success, never lost a game</figcaption></figure><figure class="pv contain" data-i="6"><div class="pv-img"><img src="assets/img/cyclo-run-363.webp" srcset="assets/img/cyclo-run-363.webp 363w" sizes="(min-width: 1100px) 560px, 50vw" width="363" height="355" alt="Printed cycloidal drive wired to an Arduino on a breadboard" decoding="async" loading="lazy"></div><figcaption>9:1 reduction, fully 3D printed</figcaption></figure><figure class="pv" data-i="7"><div class="pv-img"><img src="assets/img/light-cover-1400.webp" srcset="assets/img/light-cover-700.webp 700w, assets/img/light-cover-1400.webp 1400w" sizes="(min-width: 1100px) 560px, 50vw" width="2208" height="1512" alt="Bench prototype with the microcontroller wired to the switch unit" decoding="async" loading="lazy"></div><figcaption>99% flip success, 3-day battery, no permanent changes</figcaption></figure><figure class="pv contain" data-i="8"><div class="pv-img"><img src="assets/img/vd-path-418.webp" srcset="assets/img/vd-path-418.webp 418w" sizes="(min-width: 1100px) 560px, 50vw" width="418" height="339" alt="Plot of a vehicle&#x27;s path in an oversteer case" decoding="async" loading="lazy"></div><figcaption>Graded 100%, used as a class example</figcaption></figure><figure class="pv" data-i="9"><div class="pv-img"><img src="assets/img/vent-cover-1400.webp" srcset="assets/img/vent-cover-700.webp 700w, assets/img/vent-cover-1400.webp 1400w" sizes="(min-width: 1100px) 560px, 50vw" width="2400" height="1800" alt="Printed white vent flaps installed on a brick wall" decoding="async" loading="lazy"></div><figcaption>Saved $40, printed by 30 other people</figcaption></figure></div>
     </div>
   </div>
 </section>
@@ -284,6 +255,6 @@
   <figure><img alt=""><figcaption></figcaption></figure>
   <button class="lb-next" type="button" aria-label="Next image">→</button>
 </dialog>
-<script src="assets/site.js?v=20261124c" defer></script>
+<script src="assets/site.js?v=20261124d" defer></script>
 </body>
 </html>
