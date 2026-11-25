@@ -1,6 +1,6 @@
 """All site copy and image definitions. Facts come from ../Experience and ../Projects."""
 
-VERSION = "20261124b"
+VERSION = "20261124c"
 EMAIL = "jonathan.digiorgio04@gmail.com"
 LINKEDIN = "https://www.linkedin.com/in/j-digiorgio/"
 GITHUB = "https://github.com/jddigior"
@@ -8,6 +8,8 @@ RESUME = "assets/docs/Jonathan_DiGiorgio_Resume.pdf"
 
 SITE_DESC = ("Jonathan Di Giorgio is a mechanical engineer who designs robots and automation. "
              "Internships at Neuralink, Tesla and Pratt & Whitney Canada. University of Waterloo, graduating April 2027.")
+
+import os
 
 _img = _largest = None
 
@@ -32,21 +34,9 @@ IMAGES = {
     "ax-workspace": {"src": "ax_workspace.webp", "crop": (.02, .02, .98, .98), "widths": (800, 1600)},
     "ax-stop-shoulder": {"src": "ax_stop_shoulder.webp", "widths": (700, 1190)},
     "ax-stop-elbow": {"src": "ax_stop_elbow.webp", "widths": (800, 1600)},
-    "ax-dexterity": {"src": "ax_dexterity.webp", "widths": (800, 1600)},
-    "ax-repeat": {"src": "ax_repeat.webp", "widths": (854,)},
     "ax-torque": {"src": "ax_torque.webp", "widths": (1414,)},
     "ax-electrical": {"src": "ax_electrical.webp", "widths": (790,)},
     "ax-render-internal": {"src": "ax_render_internal.webp", "widths": (673,)},
-    "ax-grip-benchy": {"src": "ax_grip_benchy.webp", "widths": (400, 700)},
-    "ax-grip-glasses": {"src": "ax_grip_glasses.webp", "widths": (400, 700)},
-    "ax-grip-billiard": {"src": "ax_grip_billiard.webp", "widths": (400, 700)},
-    "ax-grip-egg": {"src": "ax_grip_egg.webp", "widths": (400, 700)},
-    "ax-grip-pencil": {"src": "ax_grip_pencil.webp", "widths": (400, 700)},
-    "ax-grip-mouse": {"src": "ax_grip_mouse.webp", "widths": (400, 700)},
-    "ax-grip-brush": {"src": "ax_grip_brush.webp", "widths": (400, 700)},
-    "ax-grip-speaker": {"src": "ax_grip_speaker.webp", "widths": (400, 700)},
-    "ax-grip-tape": {"src": "ax_grip_tape.webp", "widths": (400, 700)},
-    "ax-grip-knife": {"src": "ax_grip_knife.webp", "widths": (400, 700)},
     "axon-folded": {"src": "axon-v2_web_folded-over.webp", "crop": (0, .1, 1, .9), "widths": (700, 1200)},
     "v1-exploded": {"src": "v1_exploded.webp", "crop": (.02, .02, .98, .98), "widths": (800, 1600)},
     "v1-built": {"src": "v1_built.webp", "crop": (0, .06, 1, .94), "widths": (700, 1200)},
@@ -279,6 +269,17 @@ def grid(*figs, cols=2, cls=""):
     return f'<div class="figgrid c{cols} {cls}">{"".join(figs)}</div>'
 
 
+def clip(name, alt, caption, p, n=None, cls=""):
+    """A short muted looping video (plays like a GIF). Files live in assets/vid/{name}.mp4 and .webp (poster)."""
+    from PIL import Image
+    w, h = Image.open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets", "vid", name + ".webp")).size
+    label = f'<span class="fig-n">FIG. {n}</span> ' if n else ""
+    cap = f"<figcaption>{label}{caption}</figcaption>" if caption or n else ""
+    return (f'<figure class="plate fill clip {cls}"><video class="loop" muted loop playsinline preload="none" '
+            f'poster="{p}assets/vid/{name}.webp" width="{w}" height="{h}" aria-label="{alt}">'
+            f'<source src="{p}assets/vid/{name}.mp4" type="video/mp4"></video>{cap}</figure>')
+
+
 SUBSYSTEMS = [
     {"n": 1, "key": "axon-base", "name": "Rotating base", "spot": [(54.1, 72.3)],
      "text": "A belt drive turns the whole arm on bearings. The base also holds the electronics, with two fans pushing air out through vents in the side.",
@@ -347,7 +348,7 @@ def axon_v2_body(fig, p):
 
     grips = [("benchy", "Benchy"), ("glasses", "Glasses"), ("billiard", "Billiard ball"), ("egg", "Egg"), ("pencil", "Pencil"),
              ("mouse", "Mouse"), ("brush", "Vacuum brush"), ("speaker", "Speaker"), ("tape", "Tape roll"), ("knife", "Knife")]
-    grip_figs = "".join(fig("ax-grip-" + k, f"Axon V2 gripper closing on a {v.lower()}", v, sizes="(min-width: 1100px) 170px, 45vw", fill=True) for k, v in grips)
+    grip_figs = "".join(clip("grip-" + k, f"Video of the Axon V2 gripper picking up a {v.lower()}", v, p) for k, v in grips)
     grip_grid = f'<div class="gripgrid">{grip_figs}</div><p class="group-cap"><span class="fig-n">FIG. 1</span> The ten gripping tests, in rough order of difficulty.</p>'
 
     repeat = [("1", "0.5 mm"), ("2", "2.0 mm"), ("3", "1.7 mm"), ("4", "0.1 mm"), ("Average", "1.08 mm")]
@@ -372,11 +373,17 @@ def axon_v2_body(fig, p):
             '<h3 class="v-h">Reach and range of motion</h3>',
             P("The arm reaches from 22 mm to 690 mm out from the base axis. Every joint has a mechanical hard stop at its limit, which lets the arm zero itself against them."),
             fig("ax-workspace", "Render of the arm inside its reachable workspace, shown as two shaded spheres", "Reachable workspace.", n=1, fill=True, cls="mid"),
+            clip("reach", "Video of the arm sweeping from its folded position out to full reach", "Sweeping out to full reach, at 2x speed.", p, n=1, cls="mid"),
             grid(fig("ax-stop-shoulder", "Section views of the shoulder at both hard stops", "Shoulder hard stops at −5° and 225°.", n=1),
                  fig("ax-stop-elbow", "Section views of the elbow at both hard stops", "Elbow hard stops at −100° and 100°.", n=1), cls="hs"),
             '<h3 class="v-h">Dexterity</h3>',
             P("The target was 10 orthogonal approach orientations, up from 4 once the sixth axis went in. The arm reached all 10."),
-            fig("ax-dexterity", "Four photos of the arm approaching objects on a table from different directions", "Approaching objects from different directions.", n=1, fill=True),
+            '<div class="figgrid c2 dexgrid">',
+            clip("dex-1", "Video of the arm approaching an object from the side", "", p),
+            clip("dex-2", "Video of the arm approaching an object from above", "", p),
+            clip("dex-3", "Video of the arm approaching an object from the front", "", p),
+            clip("dex-4", "Video of the arm reaching down to a plate", "", p),
+            '</div><p class="group-cap"><span class="fig-n">FIG. 1</span> Approaching objects from different directions.</p>',
             '<h3 class="v-h">Gripping</h3>',
             P("The fin-ray gripper was tested on ten objects, from a 3D-printed Benchy to an egg, a pencil and a knife."),
             grip_grid,
@@ -386,7 +393,7 @@ def axon_v2_body(fig, p):
             '<div class="split">',
             P("A dial indicator measured how close the arm returns to the same point. It moved away and back four times, and the average error was 1.08 mm against a 5 mm target."),
             repeat_table, '</div>',
-            fig("ax-repeat", "Axon V2 pressing against a dial indicator on the table", "Dial indicator setup for the repeatability test.", n=1, cls="mid")),
+            clip("repeat", "Video of Axon V2 moving away from a dial indicator and returning to it", "One cycle of the repeatability test against the dial indicator.", p, n=1, cls="mid")),
         sec("Specifications", joints, cost),
     ])
 
@@ -659,6 +666,7 @@ PROJECTS = [
         "body": light_body,
     },
     {
+        "hidden": True,  # off the site for now; delete this line to bring it back
         "slug": "smart-collar", "title": "Smart dog collar", "kind": "Capstone · 2026 to 2027 · In progress",
         "short": "Electrical lead on a five-person capstone building a collar that tracks a dog's vitals.",
         "fact": "Power and haptics architecture, sized for an 8-hour runtime",
@@ -693,3 +701,5 @@ PROJECTS = [
         "body": vent_body,
     },
 ]
+
+PROJECTS = [p for p in PROJECTS if not p.get("hidden")]

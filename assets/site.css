@@ -407,3 +407,10 @@ table.specs { min-width: 0; }
 .figgrid.hs { grid-template-columns: minmax(0, 1.73fr) minmax(0, 3.84fr); align-items: start; }
 .figgrid.hs .plate { padding: 14px; }
 @media (max-width: 620px) { .figgrid.hs { grid-template-columns: 1fr; } }
+
+/* looping clips */
+.clip video { display: block; width: 100%; height: auto; background: var(--plate); }
+.gripgrid .clip video { aspect-ratio: 540 / 592; object-fit: cover; }
+.dexgrid .clip video { aspect-ratio: 16 / 9; object-fit: cover; }
+.dexgrid { gap: 12px; }
+.psec-body > .clip { margin: 20px 0 8px; }

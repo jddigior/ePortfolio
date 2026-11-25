@@ -85,4 +85,22 @@
     });
     lb.addEventListener('close', function () { lbImg.removeAttribute('src'); });
   }
+
+  // Looping clips: play while on screen, pause when off. Reduced motion gets controls instead.
+  var clips = $$('video.loop');
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (clips.length) {
+    if (still || !('IntersectionObserver' in window)) {
+      clips.forEach(function (v) { v.controls = true; v.preload = 'metadata'; });
+    } else {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          var v = en.target;
+          if (en.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () { v.controls = true; }); }
+          else if (!v.paused) v.pause();
+        });
+      }, { rootMargin: '200px 0px' });
+      clips.forEach(function (v) { io.observe(v); });
+    }
+  }
 })();

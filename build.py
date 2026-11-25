@@ -135,7 +135,7 @@ def header(prefix, current=""):
       {nav(home + "#work", "Work", "work")}
       {nav(home + "#projects", "Projects", "projects")}
       {nav(home + "#about", "About", "about")}
-      <a class="nav-cta" href="{prefix}{C.RESUME}" target="_blank" rel="noopener">Résumé <span aria-hidden="true">↗</span></a>
+      <a class="nav-cta" href="{prefix}{C.RESUME}" target="_blank" rel="noopener">Resume <span aria-hidden="true">↗</span></a>
     </nav>
   </div>
 </header>
@@ -152,7 +152,7 @@ def footer(prefix):
       </div>
       <ul class="foot-links">
         <li><a href="{C.LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><a href="{prefix}{C.RESUME}" target="_blank" rel="noopener">Résumé (PDF)</a></li>
+        <li><a href="{prefix}{C.RESUME}" target="_blank" rel="noopener">Resume (PDF)</a></li>
         <li><a href="{C.GITHUB}" target="_blank" rel="noopener">GitHub</a></li>
       </ul>
     </div>
@@ -198,7 +198,7 @@ def build_home():
         <p class="pitch">{C.PITCH}</p>
         <p class="hero-sub">{C.HERO_SUB}</p>
         <div class="hero-links">
-          <a class="btn" href="{C.RESUME}" target="_blank" rel="noopener">Résumé (PDF)</a>
+          <a class="btn" href="{C.RESUME}" target="_blank" rel="noopener">Resume (PDF)</a>
           <a class="btn ghost" href="mailto:{C.EMAIL}">Email me</a>
           <a class="text-link" href="{C.LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a>
         </div>
