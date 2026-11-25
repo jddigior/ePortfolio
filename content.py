@@ -1,6 +1,6 @@
 """All site copy and image definitions. Facts come from ../Experience and ../Projects."""
 
-VERSION = "20261124"
+VERSION = "20261124b"
 EMAIL = "jonathan.digiorgio04@gmail.com"
 LINKEDIN = "https://www.linkedin.com/in/j-digiorgio/"
 GITHUB = "https://github.com/jddigior"
@@ -29,7 +29,24 @@ IMAGES = {
     "axon-gripper": {"src": "axon-v2_web_end-effector.webp", "widths": (800, 1500)},
     "axon-iterations": {"src": "axon-v2_web_design-iterations.webp", "widths": (800, 1500)},
     "axon-panels": {"src": "axon-v2_web_panels-removed.webp", "widths": (700, 1200)},
-    "axon-reach": {"src": "axon-v2_web_range-of-motion.webp", "widths": (800, 1288)},
+    "ax-workspace": {"src": "ax_workspace.webp", "crop": (.02, .02, .98, .98), "widths": (800, 1600)},
+    "ax-stop-shoulder": {"src": "ax_stop_shoulder.webp", "widths": (700, 1190)},
+    "ax-stop-elbow": {"src": "ax_stop_elbow.webp", "widths": (800, 1600)},
+    "ax-dexterity": {"src": "ax_dexterity.webp", "widths": (800, 1600)},
+    "ax-repeat": {"src": "ax_repeat.webp", "widths": (854,)},
+    "ax-torque": {"src": "ax_torque.webp", "widths": (1414,)},
+    "ax-electrical": {"src": "ax_electrical.webp", "widths": (790,)},
+    "ax-render-internal": {"src": "ax_render_internal.webp", "widths": (673,)},
+    "ax-grip-benchy": {"src": "ax_grip_benchy.webp", "widths": (400, 700)},
+    "ax-grip-glasses": {"src": "ax_grip_glasses.webp", "widths": (400, 700)},
+    "ax-grip-billiard": {"src": "ax_grip_billiard.webp", "widths": (400, 700)},
+    "ax-grip-egg": {"src": "ax_grip_egg.webp", "widths": (400, 700)},
+    "ax-grip-pencil": {"src": "ax_grip_pencil.webp", "widths": (400, 700)},
+    "ax-grip-mouse": {"src": "ax_grip_mouse.webp", "widths": (400, 700)},
+    "ax-grip-brush": {"src": "ax_grip_brush.webp", "widths": (400, 700)},
+    "ax-grip-speaker": {"src": "ax_grip_speaker.webp", "widths": (400, 700)},
+    "ax-grip-tape": {"src": "ax_grip_tape.webp", "widths": (400, 700)},
+    "ax-grip-knife": {"src": "ax_grip_knife.webp", "widths": (400, 700)},
     "axon-folded": {"src": "axon-v2_web_folded-over.webp", "crop": (0, .1, 1, .9), "widths": (700, 1200)},
     "v1-exploded": {"src": "v1_exploded.webp", "crop": (.02, .02, .98, .98), "widths": (800, 1600)},
     "v1-built": {"src": "v1_built.webp", "crop": (0, .06, 1, .94), "widths": (700, 1200)},
@@ -300,37 +317,76 @@ def axon_v2_body(fig, p):
         for (x, y) in s["spot"]:
             spots.append(f'<button type="button" class="spot" data-sub="{s["n"]}" style="--x:{x}%;--y:{y}%" aria-label="{s["n"]}. {s["name"]}"></button>')
         tabs.append(f'<button type="button" class="tab" data-sub="{s["n"]}" role="tab" aria-selected="{"true" if s["n"] == 1 else "false"}"><span>{s["n"]}</span>{s["name"]}</button>')
-        panels.append(f'''<article class="sub" id="sub-{s["n"]}" data-sub="{s["n"]}" role="tabpanel">
+        panels.append(f"""<article class="sub" id="sub-{s["n"]}" data-sub="{s["n"]}" role="tabpanel">
   {fig(s["key"], f'Labelled section view of the {s["name"].lower()}', f'{s["name"]}, section view. Click to enlarge.', sizes="(min-width: 1240px) 820px, 100vw", fill=True)}
   <div class="sub-text"><h3>{s["name"]}</h3><p>{s["text"]}</p><p class="spec">{s["spec"]}</p></div>
-</article>''')
-    explorer = f'''<div class="explorer">
+</article>""")
+    explorer = f"""<div class="explorer">
   <div class="ex-map">
     <div class="ex-img">{_img("axon-labelled", "Render of Axon V2 with its five subsystems numbered", sizes="(min-width: 1100px) 440px, 100vw", prefix=p)}{"".join(spots)}</div>
     <div class="tabs" role="tablist" aria-label="Subsystems">{"".join(tabs)}</div>
   </div>
   <div class="ex-panels">{"".join(panels)}</div>
-</div>'''
-    rows = "".join(f"<tr><th scope=\"row\">{a}</th><td>{b}</td><td>{c}</td><td>{d}</td><td>{e}</td></tr>" for a, b, c, d, e in JOINTS)
-    joints = f'''<h3 class="mini-h">Joints</h3><div class="table-wrap"><table class="data">
+</div>"""
+    rows = "".join(f'<tr><th scope="row">{a}</th><td>{b}</td><td>{c}</td><td>{d}</td><td>{e}</td></tr>' for a, b, c, d, e in JOINTS)
+    joints = f"""<h3 class="mini-h">Joints</h3><div class="table-wrap"><table class="data">
 <thead><tr><th scope="col">Joint</th><th scope="col">Actuator</th><th scope="col">Reduction</th><th scope="col">Expected torque (Nm)</th><th scope="col">Range</th></tr></thead>
-<tbody>{rows}</tbody></table></div>'''
+<tbody>{rows}</tbody></table></div>"""
     mx = max(v for _, v in COST)
     bars = "".join(f'<li><span class="c-l">{k}</span><span class="c-bar"><span style="width:{v / mx * 100:.1f}%"></span></span><span class="c-v">${v:.2f}</span></li>' for k, v in COST)
-    cost = f'<h3 class="mini-h">Parts cost</h3><ul class="cost">{bars}</ul><p class="cost-total">Total $296.70 in parts. The arm weighs 5.5 kg, or 11.5 kg on its weighted base plate.</p>'
+    cost = f'<h3 class="mini-h">Parts cost</h3><ul class="cost">{bars}</ul><p class="cost-total">Total $296.70 in parts. The arm weighs 5.5 kg, or 11.3 kg on its steel base plate.</p>'
+
+    specs = [("Reach", "Over 0.40 m", "0.69 m"), ("Approach orientations", "10", "10"), ("Degrees of freedom", "6", "6"),
+             ("Repeatability", "Within 5 mm", "1.08 mm average"), ("Grasp time", "Under 2 s", "0.5 s"),
+             ("Pick and place cycle", "Under 25 s", "20 s"), ("Largest object", "Over 30 mm", "70 mm"),
+             ("Parts cost", "Under $300", "$296.70")]
+    spec_rows = "".join(f'<tr><th scope="row">{a}</th><td>{b}</td><td class="ok">{c}</td></tr>' for a, b, c in specs)
+    spec_table = f"""<div class="table-wrap"><table class="data specs">
+<thead><tr><th scope="col">Spec</th><th scope="col">Target</th><th scope="col">Result</th></tr></thead>
+<tbody>{spec_rows}</tbody></table></div>"""
+
+    grips = [("benchy", "Benchy"), ("glasses", "Glasses"), ("billiard", "Billiard ball"), ("egg", "Egg"), ("pencil", "Pencil"),
+             ("mouse", "Mouse"), ("brush", "Vacuum brush"), ("speaker", "Speaker"), ("tape", "Tape roll"), ("knife", "Knife")]
+    grip_figs = "".join(fig("ax-grip-" + k, f"Axon V2 gripper closing on a {v.lower()}", v, sizes="(min-width: 1100px) 170px, 45vw", fill=True) for k, v in grips)
+    grip_grid = f'<div class="gripgrid">{grip_figs}</div><p class="group-cap"><span class="fig-n">FIG. 1</span> The ten gripping tests, in rough order of difficulty.</p>'
+
+    repeat = [("1", "0.5 mm"), ("2", "2.0 mm"), ("3", "1.7 mm"), ("4", "0.1 mm"), ("Average", "1.08 mm")]
+    repeat_rows = "".join(f'<tr><th scope="row">{a}</th><td>{b}</td></tr>' for a, b in repeat)
+    repeat_table = f"""<div class="table-wrap narrow"><table class="data"><thead><tr><th scope="col">Cycle</th><th scope="col">Error</th></tr></thead><tbody>{repeat_rows}</tbody></table></div>"""
+
     return "".join([
         sec("Approach", P(
             "I started from constraints and criteria, then sketched the layout and ran first-principles torque calculations for every joint before modelling anything in Onshape. Those numbers set the motor sizes (a NEMA 23 at the shoulder, NEMA 17s and a NEMA 14 further out) and the reductions, up to 58.5:1 at the shoulder.",
-            "Everything is designed for 3D printing around off-the-shelf bearings, belts and motors, which made each iteration quick to print and test.")),
+            "Everything is designed for 3D printing around off-the-shelf bearings, belts and motors, which made each iteration quick to print and test."),
+            fig("ax-torque", "Torque equations and a results table for the shoulder and elbow", "Torque sizing for the shoulder and elbow, which set the motors and reductions.", n=1)),
         sec("Subsystems", '<p class="hint">Pick a number on the render or a subsystem from the list.</p>', explorer, anchor="subsystems", wide=True),
         sec("Electronics and control", P(
-            "I owned the electrical side, which covered the schematics for 4 stepper motors and 3 servos and the robot control firmware. Inverse kinematics I wrote runs on a PC and streams joint targets to a microcontroller, which drives the steppers through TMC2209 drivers and runs a homing sequence at startup.")),
-        sec("Iterations", P("The arm went through three versions. Later ones added mechanical hard stops, two cooling fans in the base, and magnetic cover panels that come off for repairs and cable routing."),
-            fig("axon-iterations", "Three versions of the arm side by side, labelled V1, V2 and V3", "The three versions, left to right.", n=2, fill=True)),
-        sec("Testing", P("The shoulder lifted 3 kg, and the shoulder and elbow each held 1.5 kg at full reach. At 3 kg the wrist starts to flex. Gripping tests covered a billiard ball, a mouse, an egg and a pencil."),
-            grid(fig("axon-folded", "Axon V2 folded over with the gripper pointing down", "Folded over, with the gripper pointing down.", n=3, fill=True),
-                 fig("axon-panels", "Axon V2 with its magnetic cover panels removed", "Cover panels off.", n=4, fill=True), cls="matched"),
-            fig("axon-reach", "Top-down plot of the arm's reach, 172 mm inner radius and 675 mm outer radius", "Reachable workspace, 172 mm to 675 mm from the base axis.", n=5)),
+            "I owned the electrical side, from the schematics for 4 stepper motors and 3 servos through the wiring and the robot control firmware. The steppers run on TMC2209 drivers on an Arduino CNC shield, each current-limited below its rating so nothing overheats, and a buck converter drops the supply voltage for the servos.",
+            "Inverse kinematics I wrote runs on a laptop and streams joint targets to the Arduino over serial. The arm runs a homing sequence at startup, and the wrist uses servos so it never needs homing."),
+            grid(fig("ax-electrical", "Block diagram of the power supply, stepper drivers, buck converter, servos, Arduino and laptop", "Electrical architecture. One supply feeds the stepper drivers directly and the servos through a buck converter.", n=1),
+                 fig("ax-render-internal", "Render of Axon V2 with the electronics visible in the base", "The electronics live in the base, cooled by two fans.", n=1))),
+        sec("Iterations", P("The arm went through three versions. Later ones added mechanical hard stops, two cooling fans in the base, and magnetic cover panels that snap on with clearance for the moving parts and wires, and come off for repairs."),
+            fig("axon-iterations", "Three versions of the arm side by side, labelled V1, V2 and V3", "The three versions, left to right.", n=1, fill=True),
+            fig("axon-panels", "Axon V2 with its magnetic cover panels removed", "Cover panels off.", n=1, fill=True, cls="mid")),
+        sec("Verification", P("Each design spec had its own test."), spec_table,
+            '<h3 class="v-h">Reach and range of motion</h3>',
+            P("The arm reaches from 22 mm to 690 mm out from the base axis. Every joint has a mechanical hard stop at its limit, which lets the arm zero itself against them."),
+            fig("ax-workspace", "Render of the arm inside its reachable workspace, shown as two shaded spheres", "Reachable workspace.", n=1, fill=True, cls="mid"),
+            grid(fig("ax-stop-shoulder", "Section views of the shoulder at both hard stops", "Shoulder hard stops at −5° and 225°.", n=1),
+                 fig("ax-stop-elbow", "Section views of the elbow at both hard stops", "Elbow hard stops at −100° and 100°.", n=1), cls="hs"),
+            '<h3 class="v-h">Dexterity</h3>',
+            P("The target was 10 orthogonal approach orientations, up from 4 once the sixth axis went in. The arm reached all 10."),
+            fig("ax-dexterity", "Four photos of the arm approaching objects on a table from different directions", "Approaching objects from different directions.", n=1, fill=True),
+            '<h3 class="v-h">Gripping</h3>',
+            P("The fin-ray gripper was tested on ten objects, from a 3D-printed Benchy to an egg, a pencil and a knife."),
+            grip_grid,
+            '<h3 class="v-h">Load</h3>',
+            P("The shoulder lifted 3 kg, and the shoulder and elbow each held 1.5 kg at full reach. At 3 kg the wrist starts to flex."),
+            '<h3 class="v-h">Repeatability</h3>',
+            '<div class="split">',
+            P("A dial indicator measured how close the arm returns to the same point. It moved away and back four times, and the average error was 1.08 mm against a 5 mm target."),
+            repeat_table, '</div>',
+            fig("ax-repeat", "Axon V2 pressing against a dial indicator on the table", "Dial indicator setup for the repeatability test.", n=1, cls="mid")),
         sec("Specifications", joints, cost),
     ])
 

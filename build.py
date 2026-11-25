@@ -6,6 +6,7 @@ Source images live in _src/. Content lives in content.py.
 """
 import html
 import os
+import re
 import shutil
 
 from PIL import Image
@@ -107,8 +108,8 @@ def head(title, desc, prefix, path, og_img):
 <meta property="og:description" content="{html.escape(desc, quote=True)}">
 <meta property="og:image" content="{SITE}/{og_img}">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="{prefix}favicon.ico" sizes="48x48">
-<link rel="icon" href="{prefix}favicon.svg?v=2" type="image/svg+xml">
+<link rel="icon" href="{prefix}favicon.ico?v=3" sizes="48x48">
+<link rel="icon" href="{prefix}favicon.svg?v=3" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{prefix}apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -381,7 +382,10 @@ def build_project(i, pr):
 </main>
 """)
     out.append(footer(p))
-    write(f"projects/{slug}/index.html", "".join(out))
+    page = "".join(out)
+    counter = iter(range(1, 1000))
+    page = re.sub(r'<span class="fig-n">FIG\. \d+</span>', lambda m: f'<span class="fig-n">FIG. {next(counter)}</span>', page)
+    write(f"projects/{slug}/index.html", page)
 
 
 def build_404():

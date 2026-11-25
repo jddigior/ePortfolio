@@ -27,7 +27,7 @@ Copy tells
 
 ## What this site does instead
 - Type pairing chosen for the job: Newsreader (a text serif with optical sizes) for display, Schibsted Grotesk for UI and body, IBM Plex Mono only for figure numbers and specs
-- Warm paper background, near-black ink, one oxide-orange accent used for callout balloons and links. No gradients.
+- Warm paper background, near-black ink, one light-blue accent used for callout balloons, markers and links (a deeper blue for link text so it stays readable). No gradients.
 - Engineering-drawing language where it carries information: numbered balloon callouts on the hero photo (like a BOM), a title block for the key facts, figures labelled FIG. 1, 2, 3
 - Real photos and CAD from the work, shown on neutral plates at their native resolution so nothing gets stretched
 - Square corners, hairline rules, no card shadows
